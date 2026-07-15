@@ -328,7 +328,7 @@
 <body>
 
 <nav>
-  <a href="#" class="nav-logo"><span class="dot"></span>Hassaan Raza</a>
+  <a href="#" class="nav-logo js-nav-logo"><span class="dot"></span><span class="js-profile-name"></span></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
@@ -336,18 +336,18 @@
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="assets/resume.pdf" class="nav-cta" download>Resume</a>
+  <a href="#" class="nav-cta js-resume-link" download>Resume</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <div class="hero-tag"><span class="pulse"></span> Available for full-time roles</div>
-    <h1>Electrical engineer,<br>built from <span class="accent">first principles</span>.</h1>
-    <p class="hero-sub">I design and build the systems between a circuit diagram and a working prototype — embedded firmware, power electronics, and industrial control.</p>
+    <div class="hero-tag"><span class="pulse"></span> <span id="hero-availability"></span></div>
+    <h1 id="hero-headline"></h1>
+    <p class="hero-sub" id="hero-sub"></p>
     <div class="hero-btns">
       <a href="#projects" class="btn btn-primary">View Projects →</a>
-      <a href="assets/resume.pdf" class="btn btn-outline" download>Download Resume</a>
+      <a href="#" class="btn btn-outline js-resume-link" download>Download Resume</a>
     </div>
   </div>
   <svg class="hero-signal" viewBox="0 0 460 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -362,26 +362,22 @@
     <h2 class="section-title">Who I am</h2>
     <div class="section-line"></div>
     <div class="about-grid">
-      <div class="about-text">
-        <p>I'm a final-year Electrical Engineering student with a strong foundation in circuit design, embedded systems, and power electronics. I like bridging theory and hardware — taking something from a simulation to a working PCB in hand.</p>
-        <p>Across my degree I've worked on projects spanning microcontroller-based automation, analog filter design, and motor control. I'm equally comfortable in the hardware lab and writing firmware in C.</p>
-        <p>I'm currently looking for roles where I can contribute to real engineering problems and keep growing as a hands-on engineer.</p>
+      <div class="about-text" id="about-paragraphs">
+        <!-- Rendered dynamically -->
       </div>
       <div class="about-stats">
         <div class="stat-card">
-          <div class="stat-num">4+</div>
+          <div class="stat-num" id="stat-years">0</div>
           <div class="stat-label">Years of study</div>
         </div>
         <div class="stat-card">
-          <div class="stat-num">8+</div>
+          <div class="stat-num" id="stat-projects">0</div>
           <div class="stat-label">Projects built</div>
         </div>
         <div class="focus-card">
           <div class="focus-label">// currently focused on</div>
-          <div class="focus-tags">
-            <span class="focus-tag">Power Electronics</span>
-            <span class="focus-tag">Embedded ML</span>
-            <span class="focus-tag">Industrial Automation</span>
+          <div class="focus-tags" id="focus-tags-container">
+            <!-- Rendered dynamically -->
           </div>
         </div>
       </div>
@@ -395,52 +391,8 @@
     <p class="section-label">// experience</p>
     <h2 class="section-title">Internships & experience</h2>
     <div class="section-line"></div>
-    <div class="timeline">
-
-      <!-- EDIT THIS BLOCK with your real internship -->
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-header">
-            <div class="timeline-role">Electrical Engineering Intern</div>
-            <span class="timeline-badge">Internship</span>
-          </div>
-          <div class="timeline-company">Company Name — City, Pakistan</div>
-          <div class="timeline-date">Jun 2024 – Aug 2024 · 3 months</div>
-          <div class="timeline-desc">
-            Assisted the power systems team in designing and testing control panels for industrial equipment. Worked on PLC programming for conveyor automation and conducted routine maintenance checks on HV switchgear.
-          </div>
-          <div class="timeline-tags">
-            <span class="timeline-tag">PLC</span>
-            <span class="timeline-tag">Automation</span>
-            <span class="timeline-tag">Power Systems</span>
-            <span class="timeline-tag">HV Equipment</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- ADD MORE BLOCKS BELOW IF YOU HAVE MORE EXPERIENCE -->
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-header">
-            <div class="timeline-role">Lab Teaching Assistant</div>
-            <span class="timeline-badge">Part-time</span>
-          </div>
-          <div class="timeline-company">Your University — Lahore, Pakistan</div>
-          <div class="timeline-date">Sep 2023 – May 2024 · 8 months</div>
-          <div class="timeline-desc">
-            Supported the lab instructor in running electronics and circuits lab sessions for sophomore EE students — helping troubleshoot circuit builds, grading lab reports, and maintaining oscilloscopes and function generators.
-          </div>
-          <div class="timeline-tags">
-            <span class="timeline-tag">Teaching</span>
-            <span class="timeline-tag">Electronics</span>
-            <span class="timeline-tag">Circuits</span>
-            <span class="timeline-tag">Mentoring</span>
-          </div>
-        </div>
-      </div>
-
+    <div class="timeline" id="experience-timeline">
+      <!-- Rendered dynamically -->
     </div>
   </div>
 </section>
@@ -451,57 +403,8 @@
     <p class="section-label">// skills</p>
     <h2 class="section-title">What I work with</h2>
     <div class="section-line"></div>
-    <div class="skills-grid">
-      <div class="skill-group">
-        <div class="skill-group-title">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 4V2M16 4V2M8 22v-2M16 22v-2M4 8H2M4 16H2M22 8h-2M22 16h-2"/></svg>
-          Hardware
-        </div>
-        <div class="skill-tags">
-          <span class="skill-tag">PCB Design</span>
-          <span class="skill-tag">KiCad</span>
-          <span class="skill-tag">Altium</span>
-          <span class="skill-tag">Oscilloscope</span>
-          <span class="skill-tag">Soldering</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 17V7l8-4 8 4v10l-8 4-8-4Z"/><path d="M4 7l8 4 8-4M12 11v10"/></svg>
-          Embedded Systems
-        </div>
-        <div class="skill-tags">
-          <span class="skill-tag">STM32</span>
-          <span class="skill-tag">Arduino</span>
-          <span class="skill-tag">ESP32</span>
-          <span class="skill-tag">C / C++</span>
-          <span class="skill-tag">RTOS</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12h4l2-7 4 14 2-7h6"/></svg>
-          Simulation & Analysis
-        </div>
-        <div class="skill-tags">
-          <span class="skill-tag">MATLAB</span>
-          <span class="skill-tag">Simulink</span>
-          <span class="skill-tag">LTspice</span>
-          <span class="skill-tag">Proteus</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg>
-          Power & Control
-        </div>
-        <div class="skill-tags">
-          <span class="skill-tag">DC-DC Converters</span>
-          <span class="skill-tag">PID Control</span>
-          <span class="skill-tag">Motor Drives</span>
-          <span class="skill-tag">Power Factor</span>
-        </div>
-      </div>
+    <div class="skills-grid" id="skills-container">
+      <!-- Rendered dynamically -->
     </div>
   </div>
 </section>
@@ -512,85 +415,8 @@
     <p class="section-label">// projects</p>
     <h2 class="section-title">What I've built</h2>
     <div class="section-line"></div>
-    <div class="projects-grid">
-
-      <div class="project-card">
-        <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
-        <div class="project-title">PWM-Based DC Motor Speed Controller</div>
-        <div class="project-desc">Designed and built a closed-loop motor speed controller using an STM32 microcontroller and H-bridge driver. Implemented a PID algorithm with real-time RPM feedback via encoder.</div>
-        <div class="project-tags">
-          <span class="project-tag">STM32</span>
-          <span class="project-tag">C</span>
-          <span class="project-tag">PID</span>
-          <span class="project-tag">PCB</span>
-        </div>
-        <a href="#" class="project-link">View on GitHub →</a>
-      </div>
-
-      <div class="project-card">
-        <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></div>
-        <div class="project-title">Buck-Boost Converter Design</div>
-        <div class="project-desc">Simulated and prototyped a non-inverting buck-boost converter for 5–40V input with 12V regulated output, achieving 91% efficiency. Validated in LTspice before the hardware build.</div>
-        <div class="project-tags">
-          <span class="project-tag">LTspice</span>
-          <span class="project-tag">MATLAB</span>
-          <span class="project-tag">Power Electronics</span>
-        </div>
-        <a href="#" class="project-link">View on GitHub →</a>
-      </div>
-
-      <div class="project-card">
-        <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12a7 7 0 0 1 14 0M8 15a4 4 0 0 1 8 0M12 18v.01"/></svg></div>
-        <div class="project-title">IoT Environmental Monitoring Node</div>
-        <div class="project-desc">Low-power sensor node using ESP32 with temperature, humidity, and AQI sensors. Data published via MQTT to a cloud dashboard; deep-sleep power management achieves a 6-month battery runtime.</div>
-        <div class="project-tags">
-          <span class="project-tag">ESP32</span>
-          <span class="project-tag">MQTT</span>
-          <span class="project-tag">C++</span>
-          <span class="project-tag">IoT</span>
-        </div>
-        <a href="#" class="project-link">View on GitHub →</a>
-      </div>
-
-      <div class="project-card">
-        <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12h4l2-7 4 14 2-7h6"/></svg></div>
-        <div class="project-title">Active Filter Design (Final Year Project)</div>
-        <div class="project-desc">A multi-stage active Butterworth low-pass filter for audio signal conditioning. Designed op-amp stages using Sallen-Key topology, simulated in Proteus, then fabricated on a custom PCB.</div>
-        <div class="project-tags">
-          <span class="project-tag">Analog</span>
-          <span class="project-tag">Op-Amp</span>
-          <span class="project-tag">Proteus</span>
-          <span class="project-tag">KiCad</span>
-        </div>
-        <a href="#" class="project-link">View Report →</a>
-      </div>
-
-      <div class="project-card">
-        <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg></div>
-        <div class="project-title">Home Automation via UART & Relay</div>
-        <div class="project-desc">Arduino-based home automation prototype controlling a 4-channel relay board via serial commands from a mobile app, with overcurrent protection and real-time status feedback.</div>
-        <div class="project-tags">
-          <span class="project-tag">Arduino</span>
-          <span class="project-tag">UART</span>
-          <span class="project-tag">Relay</span>
-          <span class="project-tag">Bluetooth</span>
-        </div>
-        <a href="#" class="project-link">View on GitHub →</a>
-      </div>
-
-      <div class="project-card">
-        <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="7" r="2"/><circle cx="18" cy="7" r="2"/><circle cx="12" cy="17" r="2"/><path d="M6 9v4l6 4M18 9v4l-6 4"/></svg></div>
-        <div class="project-title">3-Phase Inverter Simulation</div>
-        <div class="project-desc">Modelled a 3-phase SPWM inverter in MATLAB/Simulink for an induction motor drive application, analyzing THD, switching losses, and torque ripple under varying load conditions.</div>
-        <div class="project-tags">
-          <span class="project-tag">MATLAB</span>
-          <span class="project-tag">Simulink</span>
-          <span class="project-tag">SPWM</span>
-          <span class="project-tag">Drives</span>
-        </div>
-        <a href="#" class="project-link">View Report →</a>
-      </div>
-
+    <div class="projects-grid" id="projects-container">
+      <!-- Rendered dynamically -->
     </div>
   </div>
 </section>
@@ -603,24 +429,9 @@
     <div class="section-line"></div>
     <div class="contact-grid">
       <div class="contact-info">
-        <p>I'm open to internships, graduate roles, and freelance hardware projects. I typically reply within 24 hours.</p>
-        <div class="contact-links">
-          <a href="mailto:hassaan6972@email.com" class="contact-link">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-            hassaan6972@email.com
-          </a>
-          <a href="https://linkedin.com/in/hassaan" class="contact-link" target="_blank">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 13v4"/></svg>
-            linkedin.com/in/hassaan
-          </a>
-          <a href="https://github.com/Hassaan-R" class="contact-link" target="_blank">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2-.2 4.5-1 4.5-4.5a3.5 3.5 0 0 0-1-2.5 3.2 3.2 0 0 0-.1-2.4s-.9-.3-2.9 1a10 10 0 0 0-5.2 0c-2-1.3-2.9-1-2.9-1a3.2 3.2 0 0 0-.1 2.4 3.5 3.5 0 0 0-1 2.5c0 3.5 2.4 4.3 4.5 4.5-.4.4-.4.9-.5 1.5V20"/></svg>
-            github.com/Hassaan-R
-          </a>
-          <a href="assets/resume.pdf" class="contact-link" download>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M12 18v-6M9 15l3 3 3-3"/></svg>
-            Download Resume
-          </a>
+        <p id="contact-intro"></p>
+        <div class="contact-links" id="contact-links-container">
+          <!-- Rendered dynamically -->
         </div>
       </div>
       <div>
@@ -644,22 +455,266 @@
   </div>
 </section>
 
-<footer>
-  <p>Designed & built by Hassaan Raza · Electrical Engineering · 2026</p>
+<footer id="footer-text">
+  <!-- Rendered dynamically -->
 </footer>
 
+<!-- Dynamic Content Engine -->
 <script>
-  // Scroll-reveal for section containers, respects reduced-motion via CSS above.
-  const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in');
-        io.unobserve(entry.target);
+  /******************************************************************
+   * 1. CONFIGURATION DATA (Modify this object to update your site!)
+   ******************************************************************/
+  const PortfolioData = {
+    profileName: "Hassaan Raza",
+    resumeUrl: "assets/resume.pdf",
+
+    hero: {
+      availability: "Available for full-time roles",
+      // Use <span class="accent"></span> to highlight words in warm brass
+      headline: "Electrical engineer,<br>built from <span class='accent'>first principles</span>.",
+      subText: "I design and build the systems between a circuit diagram and a working prototype — embedded firmware, power electronics, and industrial control."
+    },
+
+    about: {
+      paragraphs: [
+        "I'm a final-year Electrical Engineering student with a strong foundation in circuit design, embedded systems, and power electronics. I like bridging theory and hardware — taking something from a simulation to a working PCB in hand.",
+        "Across my degree I've worked on projects spanning microcontroller-based automation, analog filter design, and motor control. I'm equally comfortable in the hardware lab and writing firmware in C.",
+        "I'm currently looking for roles where I can contribute to real engineering problems and keep growing as a hands-on engineer."
+      ],
+      yearsOfStudy: "4+",
+      projectsCount: "8+",
+      currentlyFocusedOn: [
+        "Power Electronics",
+        "Embedded ML",
+        "Industrial Automation"
+      ]
+    },
+
+    experience: [
+      {
+        role: "Electrical Engineering Intern",
+        badge: "Internship",
+        company: "Company Name — City, Pakistan",
+        duration: "Jun 2024 – Aug 2024 · 3 months",
+        description: "Assisted the power systems team in designing and testing control panels for industrial equipment. Worked on PLC programming for conveyor automation and conducted routine maintenance checks on HV switchgear.",
+        tags: ["PLC", "Automation", "Power Systems", "HV Equipment"]
+      },
+      {
+        role: "Lab Teaching Assistant",
+        badge: "Part-time",
+        company: "Your University — Lahore, Pakistan",
+        duration: "Sep 2023 – May 2024 · 8 months",
+        description: "Supported the lab instructor in running electronics and circuits lab sessions for sophomore EE students — helping troubleshoot circuit builds, grading lab reports, and maintaining oscilloscopes and function generators.",
+        tags: ["Teaching", "Electronics", "Circuits", "Mentoring"]
       }
-    });
-  }, { threshold: 0.12 });
-  revealEls.forEach(el => io.observe(el));
+    ],
+
+    skills: [
+      {
+        groupName: "Hardware",
+        // SVG paths used directly for simplicity
+        iconSvg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 4V2M16 4V2M8 22v-2M16 22v-2M4 8H2M4 16H2M22 8h-2M22 16h-2"/></svg>`,
+        tags: ["PCB Design", "KiCad", "Altium", "Oscilloscope", "Soldering"]
+      },
+      {
+        groupName: "Embedded Systems",
+        iconSvg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 17V7l8-4 8 4v10l-8 4-8-4Z"/><path d="M4 7l8 4 8-4M12 11v10"/></svg>`,
+        tags: ["STM32", "Arduino", "ESP32", "C / C++", "RTOS"]
+      },
+      {
+        groupName: "Simulation & Analysis",
+        iconSvg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12h4l2-7 4 14 2-7h6"/></svg>`,
+        tags: ["MATLAB", "Simulink", "LTspice", "Proteus"]
+      },
+      {
+        groupName: "Power & Control",
+        iconSvg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg>`,
+        tags: ["DC-DC Converters", "PID Control", "Motor Drives", "Power Factor"]
+      }
+    ],
+
+    projects: [
+      {
+        title: "PWM-Based DC Motor Speed Controller",
+        description: "Designed and built a closed-loop motor speed controller using an STM32 microcontroller and H-bridge driver. Implemented a PID algorithm with real-time RPM feedback via encoder.",
+        tags: ["STM32", "C", "PID", "PCB"],
+        linkText: "View on GitHub →",
+        linkUrl: "#",
+        iconSvg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>`
+      },
+      {
+        title: "Buck-Boost Converter Design",
+        description: "Simulated and prototyped a non-inverting buck-boost converter for 5–40V input with 12V regulated output, achieving 91% efficiency. Validated in LTspice before the hardware build.",
+        tags: ["LTspice", "MATLAB", "Power Electronics"],
+        linkText: "View on GitHub →",
+        linkUrl: "#",
+        iconSvg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg>`
+      },
+      {
+        title: "IoT Environmental Monitoring Node",
+        description: "Low-power sensor node using ESP32 with temperature, humidity, and AQI sensors. Data published via MQTT to a cloud dashboard; deep-sleep power management achieves a 6-month battery runtime.",
+        tags: ["ESP32", "MQTT", "C++", "IoT"],
+        linkText: "View on GitHub →",
+        linkUrl: "#",
+        iconSvg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12a7 7 0 0 1 14 0M8 15a4 4 0 0 1 8 0M12 18v.01"/></svg>`
+      },
+      {
+        title: "Active Filter Design (Final Year Project)",
+        description: "A multi-stage active Butterworth low-pass filter for audio signal conditioning. Designed op-amp stages using Sallen-Key topology, simulated in Proteus, then fabricated on a custom PCB.",
+        tags: ["Analog", "Op-Amp", "Proteus", "KiCad"],
+        linkText: "View Report →",
+        linkUrl: "#",
+        iconSvg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12h4l2-7 4 14 2-7h6"/></svg>`
+      },
+      {
+        title: "Home Automation via UART & Relay",
+        description: "Arduino-based home automation prototype controlling a 4-channel relay board via serial commands from a mobile app, with overcurrent protection and real-time status feedback.",
+        tags: ["Arduino", "UART", "Relay", "Bluetooth"],
+        linkText: "View on GitHub →",
+        linkUrl: "#",
+        iconSvg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg>`
+      },
+      {
+        title: "3-Phase Inverter Simulation",
+        description: "Modelled a 3-phase SPWM inverter in MATLAB/Simulink for an induction motor drive application, analyzing THD, switching losses, and torque ripple under varying load conditions.",
+        tags: ["MATLAB", "Simulink", "SPWM", "Drives"],
+        linkText: "View Report →",
+        linkUrl: "#",
+        iconSvg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="7" r="2"/><circle cx="18" cy="7" r="2"/><circle cx="12" cy="17" r="2"/><path d="M6 9v4l6 4M18 9v4l-6 4"/></svg>`
+      }
+    ],
+
+    contact: {
+      introText: "I'm open to internships, graduate roles, and freelance hardware projects. I typically reply within 24 hours.",
+      links: [
+        {
+          label: "hassaan6972@email.com",
+          url: "mailto:hassaan6972@email.com",
+          iconSvg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>`
+        },
+        {
+          label: "linkedin.com/in/hassaan",
+          url: "https://linkedin.com/in/hassaan",
+          target: "_blank",
+          iconSvg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 13v4"/></svg>`
+        },
+        {
+          label: "github.com/Hassaan-R",
+          url: "https://github.com/Hassaan-R",
+          target: "_blank",
+          iconSvg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2-.2 4.5-1 4.5-4.5a3.5 3.5 0 0 0-1-2.5 3.2 3.2 0 0 0-.1-2.4s-.9-.3-2.9 1a10 10 0 0 0-5.2 0c-2-1.3-2.9-1-2.9-1a3.2 3.2 0 0 0-.1 2.4 3.5 3.5 0 0 0-1 2.5c0 3.5 2.4 4.3 4.5 4.5-.4.4-.4.9-.5 1.5V20"/></svg>`
+        },
+        {
+          label: "Download Resume",
+          url: "assets/resume.pdf",
+          download: true,
+          iconSvg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M12 18v-6M9 15l3 3 3-3"/></svg>`
+        }
+      ]
+    },
+
+    footerText: "Designed & built by Hassaan Raza · Electrical Engineering · 2026"
+  };
+
+  /******************************************************************
+   * 2. RENDER ENGINE (Generates the elements based on config data)
+   ******************************************************************/
+  document.addEventListener("DOMContentLoaded", () => {
+    // Nav & Meta updates
+    document.querySelectorAll('.js-profile-name').forEach(el => el.textContent = PortfolioData.profileName);
+    document.querySelectorAll('.js-resume-link').forEach(el => el.setAttribute('href', PortfolioData.resumeUrl));
+    
+    // Hero Section
+    document.getElementById('hero-availability').textContent = PortfolioData.hero.availability;
+    document.getElementById('hero-headline').innerHTML = PortfolioData.hero.headline;
+    document.getElementById('hero-sub').textContent = PortfolioData.hero.subText;
+
+    // About Section
+    const aboutContainer = document.getElementById('about-paragraphs');
+    aboutContainer.innerHTML = PortfolioData.about.paragraphs.map(p => `<p>${p}</p>`).join('');
+    
+    document.getElementById('stat-years').textContent = PortfolioData.about.yearsOfStudy;
+    document.getElementById('stat-projects').textContent = PortfolioData.about.projectsCount;
+    
+    const focusContainer = document.getElementById('focus-tags-container');
+    focusContainer.innerHTML = PortfolioData.about.currentlyFocusedOn.map(tag => `<span class="focus-tag">${tag}</span>`).join('');
+
+    // Experience (Timeline) Section
+    const timelineContainer = document.getElementById('experience-timeline');
+    timelineContainer.innerHTML = PortfolioData.experience.map(item => `
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <div class="timeline-role">${item.role}</div>
+            <span class="timeline-badge">${item.badge}</span>
+          </div>
+          <div class="timeline-company">${item.company}</div>
+          <div class="timeline-date">${item.duration}</div>
+          <div class="timeline-desc">${item.description}</div>
+          <div class="timeline-tags">
+            ${item.tags.map(t => `<span class="timeline-tag">${t}</span>`).join('')}
+          </div>
+        </div>
+      </div>
+    `).join('');
+
+    // Skills Section
+    const skillsContainer = document.getElementById('skills-container');
+    skillsContainer.innerHTML = PortfolioData.skills.map(group => `
+      <div class="skill-group">
+        <div class="skill-group-title">
+          ${group.iconSvg}
+          ${group.groupName}
+        </div>
+        <div class="skill-tags">
+          ${group.tags.map(t => `<span class="skill-tag">${t}</span>`).join('')}
+        </div>
+      </div>
+    `).join('');
+
+    // Projects Section
+    const projectsContainer = document.getElementById('projects-container');
+    projectsContainer.innerHTML = PortfolioData.projects.map(proj => `
+      <div class="project-card">
+        <div class="project-icon">${proj.iconSvg}</div>
+        <div class="project-title">${proj.title}</div>
+        <div class="project-desc">${proj.description}</div>
+        <div class="project-tags">
+          ${proj.tags.map(t => `<span class="project-tag">${t}</span>`).join('')}
+        </div>
+        <a href="${proj.url}" class="project-link">${proj.linkText}</a>
+      </div>
+    `).join('');
+
+    // Contact Section
+    document.getElementById('contact-intro').textContent = PortfolioData.contact.introText;
+    const contactLinksContainer = document.getElementById('contact-links-container');
+    contactLinksContainer.innerHTML = PortfolioData.contact.links.map(link => `
+      <a href="${link.url}" 
+         class="contact-link" 
+         ${link.target ? `target="${link.target}"` : ''} 
+         ${link.download ? 'download' : ''}>
+        ${link.iconSvg}
+        ${link.label}
+      </a>
+    `).join('');
+
+    // Footer Section
+    document.getElementById('footer-text').innerHTML = `<p>${PortfolioData.footerText}</p>`;
+
+    // --- Original Scroll Reveal Logic ---
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => io.observe(el));
+  });
 </script>
 
 </body>
