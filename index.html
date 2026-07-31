@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hassaan R. — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #0B1220;
+    --ink-2: #101B2E;
+    --paper: #EDEFF3;
+    --cyan: #6FD1FF;
+    --slate: #8291A8;
+    --amber: #F2A65A;
+    --line: rgba(111,209,255,0.16);
+    --line-strong: rgba(111,209,255,0.35);
+    --display: 'Space Grotesk', sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+    --body: 'Inter', sans-serif;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:var(--body);
+    line-height:1.6;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  ::selection{ background:var(--cyan); color:var(--ink); }
+
+  a{ color:inherit; }
+
+  .wrap{ max-width:1080px; margin:0 auto; padding:0 32px; }
+
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:0.15em;
+    text-transform:uppercase;
+    color:var(--cyan);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px; height:1px;
+    background:var(--cyan);
+    display:inline-block;
+  }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky; top:0; z-index:50;
+    backdrop-filter: blur(10px);
+    background: rgba(11,18,32,0.75);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:64px;
+  }
+  .brand{
+    font-family:var(--mono);
+    font-size:15px;
+    font-weight:700;
+    letter-spacing:0.02em;
+  }
+  .brand span{ color:var(--cyan); }
+  .navlinks{ display:flex; gap:28px; list-style:none; }
+  .navlinks a{
+    font-family:var(--mono);
+    font-size:12.5px;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    text-decoration:none;
+    color:var(--slate);
+    transition:color .2s ease;
+    position:relative;
+  }
+  .navlinks a:hover{ color:var(--paper); }
+  .navlinks a:focus-visible, a:focus-visible, button:focus-visible{
+    outline:2px solid var(--cyan); outline-offset:3px;
+  }
+  .navlinks li{ counter-increment: nav; }
+
+  /* ---------- HERO ---------- */
+  header.hero{
+    position:relative;
+    padding:120px 0 100px;
+    border-bottom:1px solid var(--line);
+    overflow:hidden;
+  }
+  .hero-tag{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--slate);
+    letter-spacing:0.1em;
+  }
+  .hero h1{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:clamp(44px, 8vw, 96px);
+    line-height:0.98;
+    margin:18px 0 22px;
+    letter-spacing:-0.01em;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--cyan);
+  }
+  .hero p.role{
+    font-family:var(--mono);
+    font-size:clamp(14px,2vw,18px);
+    color:var(--slate);
+    max-width:560px;
+    margin-bottom:34px;
+  }
+  .hero-actions{ display:flex; gap:16px; flex-wrap:wrap; }
+  .btn{
+    font-family:var(--mono);
+    font-size:13px;
+    letter-spacing:0.04em;
+    text-decoration:none;
+    padding:13px 22px;
+    border:1px solid var(--line-strong);
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    transition: all .2s ease;
+  }
+  .btn.primary{ background:var(--cyan); color:var(--ink); border-color:var(--cyan); font-weight:700;}
+  .btn.primary:hover{ background:transparent; color:var(--cyan); }
+  .btn.ghost{ color:var(--paper); }
+  .btn.ghost:hover{ border-color:var(--cyan); color:var(--cyan); }
+
+  .coord{
+    position:absolute;
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--slate);
+    opacity:.7;
+  }
+  .coord.tl{ top:24px; left:32px; }
+  .coord.tr{ top:24px; right:32px; text-align:right;}
+
+  /* ---------- SECTION SCAFFOLDING ---------- */
+  section{ padding:96px 0; border-bottom:1px solid var(--line); }
+  .sec-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    margin-bottom:52px;
+    gap:24px;
+    flex-wrap:wrap;
+  }
+  .sec-head h2{
+    font-family:var(--display);
+    font-size:clamp(28px,4vw,40px);
+    font-weight:600;
+  }
+  .sec-index{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--slate);
+    border:1px solid var(--line-strong);
+    padding:6px 12px;
+    white-space:nowrap;
+  }
+
+  /* ---------- INTRO ---------- */
+  .intro-grid{
+    display:grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap:64px;
+  }
+  .intro-grid p{ color:var(--slate); font-size:16px; max-width:56ch; }
+  .intro-grid p + p{ margin-top:16px; }
+  .facts{
+    border-left:1px solid var(--line-strong);
+    padding-left:28px;
+    display:flex; flex-direction:column; gap:22px;
+  }
+  .fact dt{
+    font-family:var(--mono); font-size:11px; letter-spacing:.1em;
+    color:var(--cyan); text-transform:uppercase; margin-bottom:4px;
+  }
+  .fact dd{ font-size:15px; color:var(--paper); }
+
+  /* ---------- SKILLS ---------- */
+  .skills-legend{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap:1px;
+    background:var(--line-strong);
+    border:1px solid var(--line-strong);
+  }
+  .skill-group{
+    background:var(--ink);
+    padding:28px;
+  }
+  .skill-group h3{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--amber);
+    margin-bottom:16px;
+  }
+  .skill-group ul{ list-style:none; display:flex; flex-direction:column; gap:10px; }
+  .skill-group li{
+    font-size:14.5px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .skill-group li::before{
+    content:"";
+    width:6px; height:6px;
+    background:var(--cyan);
+    display:inline-block;
+    flex-shrink:0;
+  }
+
+  /* ---------- INTERNSHIPS (revision log) ---------- */
+  .log{ border-top:1px solid var(--line-strong); }
+  .log-row{
+    display:grid;
+    grid-template-columns: 140px 1fr 1fr;
+    gap:24px;
+    padding:26px 0;
+    border-bottom:1px solid var(--line);
+    align-items:start;
+  }
+  .log-row .date{
+    font-family:var(--mono);
+    font-size:12.5px;
+    color:var(--cyan);
+    padding-top:3px;
+  }
+  .log-row h3{
+    font-family:var(--display);
+    font-size:19px;
+    font-weight:600;
+    margin-bottom:4px;
+  }
+  .log-row .org{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--slate);
+    text-transform:uppercase;
+    letter-spacing:.06em;
+  }
+  .log-row p{ color:var(--slate); font-size:14.5px; }
+
+  @media (max-width:720px){
+    .log-row{ grid-template-columns: 1fr; }
+  }
+
+  /* ---------- PROJECTS (spec cards) ---------- */
+  .projects{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    gap:24px;
+  }
+  .card{
+    border:1px solid var(--line-strong);
+    padding:26px;
+    position:relative;
+    transition: border-color .2s ease, transform .2s ease;
+  }
+  .card:hover{ border-color:var(--cyan); transform:translateY(-3px); }
+  .card .tag{
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--slate);
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    display:block;
+    margin-bottom:14px;
+  }
+  .card h3{
+    font-family:var(--display);
+    font-size:20px;
+    font-weight:600;
+    margin-bottom:10px;
+  }
+  .card p{ color:var(--slate); font-size:14.5px; margin-bottom:18px; }
+  .stack{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px; }
+  .stack span{
+    font-family:var(--mono);
+    font-size:11px;
+    padding:4px 9px;
+    border:1px solid var(--line-strong);
+    color:var(--cyan);
+  }
+  .card a.link{
+    font-family:var(--mono);
+    font-size:12.5px;
+    text-decoration:none;
+    color:var(--paper);
+    border-bottom:1px solid var(--cyan);
+    padding-bottom:2px;
+  }
+  .card a.link:hover{ color:var(--cyan); }
+
+  /* ---------- CONTACT / TITLE BLOCK ---------- */
+  footer{ padding:80px 0 40px; }
+  .titleblock{
+    border:1px solid var(--line-strong);
+    display:grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
+  .titleblock > div{
+    padding:20px 24px;
+    border-right:1px solid var(--line-strong);
+  }
+  .titleblock > div:last-child{ border-right:none; }
+  .titleblock dt{
+    font-family:var(--mono); font-size:10.5px; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--slate); margin-bottom:6px;
+  }
+  .titleblock dd{ font-family:var(--mono); font-size:13px; color:var(--paper); }
+  .titleblock dd a{ text-decoration:none; color:var(--cyan); }
+
+  @media (max-width:720px){
+    .titleblock{ grid-template-columns: 1fr 1fr; }
+    .titleblock > div{ border-bottom:1px solid var(--line-strong); }
+    .intro-grid{ grid-template-columns:1fr; }
+    .navlinks{ display:none; }
+  }
+
+  .bottom-note{
+    text-align:center;
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--slate);
+    margin-top:28px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ transition:none !important; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">HASSAAN<span>.R</span></div>
+    <ul class="navlinks">
+      <li><a href="#intro">Intro</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#internships">Internships</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <span class="coord tl">LAT — PORTFOLIO / SHEET 01</span>
+  <span class="coord tr">REV. 1.0<br>2026</span>
+  <div class="wrap">
+    <p class="hero-tag">// software engineer — builder — problem solver</p>
+    <h1>Hassaan <em>R.</em></h1>
+    <p class="role">I design and build software — from internship codebases to
+      side projects — with an eye for clean structure and things that actually ship.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#projects">View Projects</a>
+      <a class="btn ghost" href="#contact">Get in Touch</a>
+    </div>
+  </div>
+</header>
+
+<section id="intro">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Intro</h2>
+      <span class="sec-index">SEC. 01 / INTRO</span>
+    </div>
+    <div class="intro-grid">
+      <div>
+        <p>Hi, I'm Hassaan — a software developer who enjoys turning ideas into
+          working products. I like the process as much as the result: sketching
+          out a plan, picking the right tools, and iterating until something
+          feels solid.</p>
+        <p>My background spans internships and personal projects across web
+          development, and I'm always looking for the next problem worth
+          solving. Below you'll find my skills, where I've worked, and what
+          I've built.</p>
+      </div>
+      <dl class="facts">
+        <div class="fact">
+          <dt>Focus</dt>
+          <dd>Software Development</dd>
+        </div>
+        <div class="fact">
+          <dt>Currently</dt>
+          <dd>Open to internships &amp; junior roles</dd>
+        </div>
+        <div class="fact">
+          <dt>Based in</dt>
+          <dd>Lahore, Pakistan</dd>
+        </div>
+        <div class="fact">
+          <dt>Status</dt>
+          <dd>Available for freelance work</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Skills</h2>
+      <span class="sec-index">SEC. 02 / LEGEND</span>
+    </div>
+    <div class="skills-legend">
+      <div class="skill-group">
+        <h3>Languages</h3>
+        <ul>
+          <li>JavaScript</li>
+          <li>Python</li>
+          <li>Java</li>
+          <li>C++</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Frontend</h3>
+        <ul>
+          <li>HTML &amp; CSS</li>
+          <li>React</li>
+          <li>Tailwind CSS</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Backend</h3>
+        <ul>
+          <li>Node.js</li>
+          <li>Express</li>
+          <li>REST APIs</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Tools</h3>
+        <ul>
+          <li>Git &amp; GitHub</li>
+          <li>Docker</li>
+          <li>VS Code</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="internships">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Internships</h2>
+      <span class="sec-index">SEC. 03 / LOG</span>
+    </div>
+    <div class="log">
+      <div class="log-row">
+        <div class="date">2025<br>Summer</div>
+        <div>
+          <h3>Software Development Intern</h3>
+          <div class="org">Company Name</div>
+        </div>
+        <p>Worked on building and maintaining features for an internal web
+          application, collaborating with a small team on planning and
+          code review.</p>
+      </div>
+      <div class="log-row">
+        <div class="date">2024<br>Winter</div>
+        <div>
+          <h3>Web Development Intern</h3>
+          <div class="org">Company Name</div>
+        </div>
+        <p>Contributed to front-end components and fixed bugs across the
+          product, while learning best practices for version control and
+          testing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Projects</h2>
+      <span class="sec-index">SEC. 04 / SPECS</span>
+    </div>
+    <div class="projects">
+      <div class="card">
+        <span class="tag">Project 01</span>
+        <h3>Project Name</h3>
+        <p>A short description of what this project does and the problem it
+          solves for the people who use it.</p>
+        <div class="stack">
+          <span>React</span><span>Node.js</span><span>MongoDB</span>
+        </div>
+        <a class="link" href="#" target="_blank" rel="noopener">View on GitHub →</a>
+      </div>
+      <div class="card">
+        <span class="tag">Project 02</span>
+        <h3>Project Name</h3>
+        <p>A short description of what this project does and the problem it
+          solves for the people who use it.</p>
+        <div class="stack">
+          <span>Python</span><span>Flask</span><span>SQLite</span>
+        </div>
+        <a class="link" href="#" target="_blank" rel="noopener">View on GitHub →</a>
+      </div>
+      <div class="card">
+        <span class="tag">Project 03</span>
+        <h3>Project Name</h3>
+        <p>A short description of what this project does and the problem it
+          solves for the people who use it.</p>
+        <div class="stack">
+          <span>JavaScript</span><span>HTML/CSS</span>
+        </div>
+        <a class="link" href="#" target="_blank" rel="noopener">View on GitHub →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="border-bottom:none;">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Contact</h2>
+      <span class="sec-index">SEC. 05 / TITLE BLOCK</span>
+    </div>
+    <p style="color:var(--slate); max-width:56ch; margin-bottom:40px;">
+      Have a role, a project, or just want to say hi? Reach out — I'm quick
+      to reply and always happy to talk shop.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <dl class="titleblock">
+      <div>
+        <dt>Drawn By</dt>
+        <dd>Hassaan R.</dd>
+      </div>
+      <div>
+        <dt>Email</dt>
+        <dd><a href="mailto:hassaan@example.com">hassaan@example.com</a></dd>
+      </div>
+      <div>
+        <dt>GitHub</dt>
+        <dd><a href="https://github.com/yourusername" target="_blank" rel="noopener">/yourusername</a></dd>
+      </div>
+      <div>
+        <dt>LinkedIn</dt>
+        <dd><a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">/in/yourusername</a></dd>
+      </div>
+    </dl>
+    <p class="bottom-note">© 2026 Hassaan R. — Built &amp; hosted on GitHub Pages.</p>
+  </div>
+</footer>
+
+</body>
+</html>
