@@ -3,60 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hassaan R. — Electrical Engineer & AI Research Fellow</title>
+  <title>Hassaan R. — Electrical Engineer & AI Systems Researcher</title>
   
-  <!-- Typography: Inter (Body & UI) & Space Grotesk (Headings) -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
     /* ==========================================================================
-       1. FORMAL ACADEMIC & EXECUTIVE DESIGN SYSTEM
+       MODULE 1: DESIGN TOKENS & SYSTEM VARIABLES
        ========================================================================== */
     :root {
-      /* Palette: Crisp, Trustworthy, High-Contrast */
-      --bg-main: #FAFAFC;
-      --bg-card: #FFFFFF;
-      --text-main: #0F172A;     /* Deep Slate */
-      --text-muted: #475569;    /* Muted Body */
-      --text-light: #64748B;    /* Captions/Labels */
+      /* Colors */
+      --color-bg-main: #FAFAFC;
+      --color-bg-card: #FFFFFF;
+      --color-text-main: #0F172A;
+      --color-text-muted: #475569;
+      --color-text-light: #64748B;
       
-      --accent: #0052CC;        /* Executive Academic Blue */
-      --accent-hover: #003D99;
-      --accent-light: #EFF6FF;
+      --color-accent: #0052CC;
+      --color-accent-hover: #003D99;
+      --color-accent-light: #EFF6FF;
       
-      --border-subtle: #E2E8F0;
-      --border-strong: #CBD5E1;
+      --color-border-subtle: #E2E8F0;
+      --color-border-strong: #CBD5E1;
       
-      /* Fonts */
-      --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      /* Typography */
+      --font-heading: 'Space Grotesk', -apple-system, sans-serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
 
-      /* UI Tokens */
+      /* Tokens */
       --radius-sm: 6px;
       --radius-md: 10px;
       --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
       --shadow-md: 0 4px 12px -2px rgba(15, 23, 42, 0.08);
     }
 
+    /* ==========================================================================
+       MODULE 2: BASE & RESET
+       ========================================================================== */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
-      background-color: var(--bg-main);
-      color: var(--text-main);
+      background-color: var(--color-bg-main);
+      color: var(--color-text-main);
       font-family: var(--font-body);
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
     }
+    a { color: var(--color-accent); text-decoration: none; transition: all 0.2s ease; }
+    a:hover { color: var(--color-accent-hover); }
 
-    a { color: var(--accent); text-decoration: none; transition: all 0.2s ease; }
-    a:hover { color: var(--accent-hover); }
-
-    /* Layout Scaffolding */
+    /* ==========================================================================
+       MODULE 3: REUSABLE LAYOUT & UTILITIES
+       ========================================================================== */
     .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
-    section { padding: 80px 0; border-bottom: 1px solid var(--border-subtle); }
+    section { padding: 80px 0; border-bottom: 1px solid var(--color-border-subtle); }
     
     .sec-header {
       margin-bottom: 40px;
@@ -69,47 +73,49 @@
       font-family: var(--font-heading);
       font-size: 28px;
       font-weight: 700;
-      color: var(--text-main);
+      color: var(--color-text-main);
       letter-spacing: -0.02em;
     }
     .sec-tag {
       font-family: var(--font-mono);
       font-size: 12px;
-      color: var(--text-light);
+      color: var(--color-text-light);
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
 
-    /* Buttons & Badges */
+    /* ==========================================================================
+       MODULE 4: UI COMPONENTS (BUTTONS, BADGES, LINKS)
+       ========================================================================== */
     .btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 11px 20px;
-      font-size: 14px;
+      padding: 10px 18px;
+      font-size: 13.5px;
       font-weight: 600;
       border-radius: var(--radius-sm);
       transition: all 0.2s ease;
       cursor: pointer;
     }
     .btn-primary {
-      background: var(--accent);
+      background: var(--color-accent);
       color: #FFFFFF !important;
-      border: 1px solid var(--accent);
+      border: 1px solid var(--color-accent);
     }
-    .btn-primary:hover {
-      background: var(--accent-hover);
-      box-shadow: var(--shadow-sm);
-    }
+    .btn-primary:hover { background: var(--color-accent-hover); }
+    
     .btn-secondary {
       background: #FFFFFF;
-      color: var(--text-main) !important;
-      border: 1px solid var(--border-strong);
+      color: var(--color-text-main) !important;
+      border: 1px solid var(--color-border-strong);
     }
     .btn-secondary:hover {
-      background: var(--bg-main);
-      border-color: var(--text-muted);
+      background: var(--color-bg-main);
+      border-color: var(--color-text-muted);
     }
+
+    .btn-sm { padding: 6px 12px; font-size: 12px; }
 
     .badge-status {
       display: inline-flex;
@@ -124,68 +130,68 @@
       border: 1px solid #A7F3D0;
     }
     .badge-status::before {
-      content: "";
-      width: 6px; height: 6px;
-      background: #10B981;
-      border-radius: 50%;
+      content: ""; width: 6px; height: 6px; background: #10B981; border-radius: 50%;
     }
 
-    /* Navbar */
+    .action-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .link-doc {
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* ==========================================================================
+       MODULE 5: NAVIGATION COMPONENT
+       ========================================================================== */
     nav {
       position: sticky; top: 0; z-index: 100;
       background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--color-border-subtle);
     }
     nav .wrap {
-      display: flex; align-items: center; justify-content: space-between;
-      height: 64px;
+      display: flex; align-items: center; justify-content: space-between; height: 64px;
     }
-    .brand {
-      font-family: var(--font-heading);
-      font-weight: 700;
-      font-size: 18px;
-      color: var(--text-main);
-    }
+    .brand { font-family: var(--font-heading); font-weight: 700; font-size: 18px; }
     .nav-links { display: flex; gap: 28px; list-style: none; }
-    .nav-links a {
-      font-size: 14px; font-weight: 500; color: var(--text-muted);
-    }
-    .nav-links a:hover { color: var(--accent); }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--color-text-muted); }
+    .nav-links a:hover { color: var(--color-accent); }
 
-    /* Hero Section */
-    .hero { padding: 90px 0 70px; background: #FFFFFF; border-bottom: 1px solid var(--border-subtle); }
+    /* ==========================================================================
+       MODULE 6: HERO SECTION
+       ========================================================================== */
+    .hero { padding: 90px 0 70px; background: #FFFFFF; border-bottom: 1px solid var(--color-border-subtle); }
     .hero-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
     .hero h1 {
       font-family: var(--font-heading);
       font-size: clamp(36px, 5vw, 54px);
       font-weight: 700;
       line-height: 1.15;
-      color: var(--text-main);
       margin-bottom: 16px;
       letter-spacing: -0.02em;
     }
     .hero-subtitle {
-      font-size: 18px;
-      color: var(--text-muted);
-      max-width: 680px;
-      line-height: 1.6;
-      margin-bottom: 28px;
+      font-size: 18px; color: var(--color-text-muted); max-width: 680px; line-height: 1.6; margin-bottom: 28px;
     }
     .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
 
-    /* Summary Grid */
-    .summary-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 48px;
-      align-items: start;
-    }
-    .bio-text p { margin-bottom: 16px; color: var(--text-muted); font-size: 15px; }
+    /* ==========================================================================
+       MODULE 7: ABOUT & SUMMARY GRID
+       ========================================================================== */
+    .summary-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 48px; align-items: start; }
+    .bio-text p { margin-bottom: 16px; color: var(--color-text-muted); font-size: 15px; }
     
     .quick-facts {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border-subtle);
       border-radius: var(--radius-md);
       padding: 24px;
       box-shadow: var(--shadow-sm);
@@ -193,77 +199,63 @@
     .fact-item { margin-bottom: 18px; }
     .fact-item:last-child { margin-bottom: 0; }
     .fact-item dt {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--text-light);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 2px;
+      font-size: 11px; font-weight: 600; color: var(--color-text-light); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px;
     }
-    .fact-item dd { font-size: 14px; font-weight: 600; color: var(--text-main); }
+    .fact-item dd { font-size: 14px; font-weight: 600; color: var(--color-text-main); }
 
-    /* Skills Grid */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
+    /* ==========================================================================
+       MODULE 8: SKILLS MATRIX
+       ========================================================================== */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
     .skill-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border-subtle);
       border-radius: var(--radius-md);
       padding: 24px;
       box-shadow: var(--shadow-sm);
     }
     .skill-card h3 {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--text-main);
-      margin-bottom: 14px;
-      padding-bottom: 8px;
-      border-bottom: 2px solid var(--accent-light);
+      font-size: 15px; font-weight: 700; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid var(--color-accent-light);
     }
     .skill-card ul { list-style: none; }
-    .skill-card li {
-      font-size: 13.5px;
-      color: var(--text-muted);
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .skill-card li::before {
-      content: "•";
-      color: var(--accent);
-      font-weight: bold;
-    }
+    .skill-card li { font-size: 13.5px; color: var(--color-text-muted); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+    .skill-card li::before { content: "•"; color: var(--color-accent); font-weight: bold; }
 
-    /* Experience List */
+    /* ==========================================================================
+       MODULE 9: EXPERIENCE & INTERNSHIPS (WITH LOCATION & REPORT)
+       ========================================================================== */
     .exp-list { display: flex; flex-direction: column; gap: 24px; }
     .exp-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border-subtle);
       border-radius: var(--radius-md);
       padding: 28px;
       box-shadow: var(--shadow-sm);
       display: grid;
-      grid-template-columns: 200px 1fr;
+      grid-template-columns: 220px 1fr;
       gap: 24px;
     }
-    .exp-meta { font-family: var(--font-mono); font-size: 13px; color: var(--text-light); }
-    .exp-org { font-weight: 700; color: var(--accent); margin-top: 4px; font-family: var(--font-body); }
-    .exp-body h3 { font-size: 18px; font-weight: 600; color: var(--text-main); margin-bottom: 8px; }
-    .exp-body p { font-size: 14.5px; color: var(--text-muted); line-height: 1.6; }
+    .exp-meta { font-family: var(--font-mono); font-size: 12.5px; color: var(--color-text-light); }
+    .exp-org { font-weight: 700; color: var(--color-accent); margin-top: 4px; font-family: var(--font-body); font-size: 14px; }
+    .exp-location {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-family: var(--font-body);
+      font-size: 12px;
+      color: var(--color-text-light);
+      margin-top: 6px;
+    }
+    .exp-body h3 { font-size: 18px; font-weight: 600; color: var(--color-text-main); margin-bottom: 8px; }
+    .exp-body p { font-size: 14.5px; color: var(--color-text-muted); line-height: 1.6; }
 
-    /* Projects Grid */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
-    }
+    /* ==========================================================================
+       MODULE 10: PROJECTS (WITH GITHUB & REPORT LINKS)
+       ========================================================================== */
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
     .proj-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border-subtle);
       border-radius: var(--radius-md);
       padding: 28px;
       box-shadow: var(--shadow-sm);
@@ -272,37 +264,28 @@
       justify-content: space-between;
       transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
-    .proj-card:hover {
-      border-color: var(--border-strong);
-      box-shadow: var(--shadow-md);
-    }
-    .proj-type {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 8px;
-    }
-    .proj-card h3 { font-size: 18px; font-weight: 700; color: var(--text-main); margin-bottom: 10px; }
-    .proj-card p { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; flex-grow: 1; }
+    .proj-card:hover { border-color: var(--color-border-strong); box-shadow: var(--shadow-md); }
+    .proj-type { font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--color-accent); text-transform: uppercase; margin-bottom: 8px; }
+    .proj-card h3 { font-size: 18px; font-weight: 700; color: var(--color-text-main); margin-bottom: 10px; }
+    .proj-card p { font-size: 14px; color: var(--color-text-muted); margin-bottom: 20px; flex-grow: 1; }
     
     .tech-stack { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
     .tech-stack span {
-      background: var(--bg-main);
-      border: 1px solid var(--border-subtle);
-      color: var(--text-muted);
+      background: var(--color-bg-main);
+      border: 1px solid var(--color-border-subtle);
+      color: var(--color-text-muted);
       font-size: 12px;
       font-family: var(--font-mono);
       padding: 3px 8px;
       border-radius: 4px;
     }
 
-    /* Contact Block */
+    /* ==========================================================================
+       MODULE 11: CONTACT & FOOTER
+       ========================================================================== */
     .contact-box {
       background: #FFFFFF;
-      border: 1px solid var(--border-subtle);
+      border: 1px solid var(--color-border-subtle);
       border-radius: var(--radius-md);
       padding: 40px;
       box-shadow: var(--shadow-sm);
@@ -313,26 +296,17 @@
     }
     .contact-details { display: flex; flex-direction: column; gap: 16px; }
     .contact-detail-item { display: flex; flex-direction: column; }
-    .contact-detail-item label {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--text-light);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .contact-detail-item a, .contact-detail-item span {
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--text-main);
-    }
+    .contact-detail-item label { font-size: 11px; font-weight: 600; color: var(--color-text-light); text-transform: uppercase; letter-spacing: 0.05em; }
+    .contact-detail-item a, .contact-detail-item span { font-size: 16px; font-weight: 600; color: var(--color-text-main); }
 
-    /* Footer */
-    footer { padding: 40px 0; background: #FFFFFF; text-align: center; font-size: 13px; color: var(--text-light); }
+    footer { padding: 40px 0; background: #FFFFFF; text-align: center; font-size: 13px; color: var(--color-text-light); }
 
-    /* Responsive adjustments */
+    /* ==========================================================================
+       MODULE 12: RESPONSIVE BREAKPOINTS
+       ========================================================================== */
     @media (max-width: 768px) {
       .summary-grid { grid-template-columns: 1fr; }
-      .exp-card { grid-template-columns: 1fr; gap: 8px; }
+      .exp-card { grid-template-columns: 1fr; gap: 12px; }
       .contact-box { grid-template-columns: 1fr; }
       .nav-links { display: none; }
     }
@@ -340,7 +314,7 @@
 </head>
 <body>
 
-  <!-- NAVIGATION -->
+  <!-- NAVBAR MODULE -->
   <nav>
     <div class="wrap">
       <div class="brand">HASSAAN R.</div>
@@ -354,7 +328,7 @@
     </div>
   </nav>
 
-  <!-- HERO SECTION -->
+  <!-- HERO MODULE -->
   <header class="hero">
     <div class="wrap">
       <div class="hero-meta">
@@ -365,7 +339,6 @@
         Specializing in power systems, real-time embedded control, and applied machine learning models. Harvard ALP Fellow & AI/ML Fellow dedicated to solving complex hardware-software challenges.
       </p>
       <div class="hero-ctas">
-        <!-- Resume download trigger -->
         <a class="btn btn-primary" href="resume.pdf" download="Hassaan_R_Resume.pdf">
           <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
           Download Official CV
@@ -375,7 +348,7 @@
     </div>
   </header>
 
-  <!-- SECTION 1: ABOUT & SUMMARY -->
+  <!-- ABOUT MODULE -->
   <section id="about">
     <div class="wrap">
       <div class="sec-header">
@@ -417,7 +390,7 @@
     </div>
   </section>
 
-  <!-- SECTION 2: TECHNICAL CAPABILITIES -->
+  <!-- SKILLS MATRIX MODULE -->
   <section id="skills">
     <div class="wrap">
       <div class="sec-header">
@@ -465,7 +438,7 @@
     </div>
   </section>
 
-  <!-- SECTION 3: EXPERIENCE & FELLOWSHIPS -->
+  <!-- EXPERIENCE & INTERNSHIPS MODULE -->
   <section id="experience">
     <div class="wrap">
       <div class="sec-header">
@@ -474,39 +447,61 @@
       </div>
       <div class="exp-list">
         
+        <!-- Entry 1 -->
         <div class="exp-card">
           <div class="exp-meta">
             <div>INTERNSHIP</div>
             <div class="exp-org">Emertxe Embedded Systems</div>
+            <div class="exp-location">📍 Bangalore, India (Remote)</div>
           </div>
           <div class="exp-body">
             <h3>Embedded Firmware Systems Engineering Intern</h3>
             <p>Designed and configured bare-metal C firmware for microcontroller architecture. Built hardware-abstraction drivers for peripherals (I2C, SPI, UART) and developed modular code bases for real-time sensor control modules.</p>
+            <div class="action-links">
+              <a class="link-doc" href="reports/emertxe_internship_report.pdf" target="_blank">
+                📄 View Internship Report →
+              </a>
+            </div>
           </div>
         </div>
 
+        <!-- Entry 2 -->
         <div class="exp-card">
           <div class="exp-meta">
             <div>INTERNSHIP</div>
             <div class="exp-org">National Grid Company Pakistan</div>
+            <div class="exp-location">📍 Lahore, Pakistan</div>
           </div>
           <div class="exp-body">
             <h3>Power Systems Engineering Intern</h3>
             <p>Analyzed high-voltage transmission operations and grid protection equipment within grid substations. Reviewed load-flow management protocols, transformer monitoring routines, and automated protection relay networks.</p>
+            <div class="action-links">
+              <a class="link-doc" href="reports/national_grid_report.pdf" target="_blank">
+                📄 View Internship Report →
+              </a>
+            </div>
           </div>
         </div>
 
+        <!-- Entry 3 -->
         <div class="exp-card">
           <div class="exp-meta">
             <div>FELLOWSHIP</div>
             <div class="exp-org">AI/ML Fellowship Program</div>
+            <div class="exp-location">📍 Remote</div>
           </div>
           <div class="exp-body">
             <h3>Machine Learning Research Fellow</h3>
             <p>Conducted extensive hands-on training focusing on statistical models, deep neural networks, and model deployment on constraint-heavy hardware (TinyML) for industrial applications.</p>
+            <div class="action-links">
+              <a class="link-doc" href="reports/aiml_fellowship_report.pdf" target="_blank">
+                📄 View Fellowship Report →
+              </a>
+            </div>
           </div>
         </div>
 
+        <!-- Entry 4 -->
         <div class="exp-card">
           <div class="exp-meta">
             <div>FELLOWSHIP</div>
@@ -514,7 +509,12 @@
           </div>
           <div class="exp-body">
             <h3>Academic & Leadership Fellow</h3>
-            <p>Selected for rigorous cross-disciplinary program studying leadership in technology, research strategies, global problem-solving frameworks, and engineering ethics.</p>
+            <p>Selected for a rigorous cross-disciplinary program studying leadership in technology, research strategies, global problem-solving frameworks, and engineering ethics.</p>
+            <div class="action-links">
+              <a class="link-doc" href="reports/harvard_alp_certificate.pdf" target="_blank">
+                📄 View Completion Report →
+              </a>
+            </div>
           </div>
         </div>
 
@@ -522,7 +522,7 @@
     </div>
   </section>
 
-  <!-- SECTION 4: SELECTED PROJECTS -->
+  <!-- PROJECTS MODULE -->
   <section id="projects">
     <div class="wrap">
       <div class="sec-header">
@@ -531,6 +531,7 @@
       </div>
       <div class="projects-grid">
         
+        <!-- Project 1 -->
         <div class="proj-card">
           <div>
             <div class="proj-type">Embedded Systems & TinyML</div>
@@ -540,9 +541,18 @@
               <span>Embedded C</span><span>ARM Cortex</span><span>TinyML</span><span>C++</span>
             </div>
           </div>
-          <a class="btn btn-secondary" href="#" style="align-self: flex-start;">Technical Documentation →</a>
+          <div class="action-links">
+            <a class="btn btn-secondary btn-sm" href="https://github.com/yourusername/edge-monitoring-node" target="_blank" rel="noopener">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+              GitHub Code
+            </a>
+            <a class="btn btn-secondary btn-sm" href="reports/edge_monitoring_report.pdf" target="_blank">
+              📄 Tech Report
+            </a>
+          </div>
         </div>
 
+        <!-- Project 2 -->
         <div class="proj-card">
           <div>
             <div class="proj-type">Power Electronics</div>
@@ -552,9 +562,18 @@
               <span>Power Electronics</span><span>MATLAB</span><span>Simulink</span><span>C</span>
             </div>
           </div>
-          <a class="btn btn-secondary" href="#" style="align-self: flex-start;">Technical Documentation →</a>
+          <div class="action-links">
+            <a class="btn btn-secondary btn-sm" href="https://github.com/yourusername/converter-controller" target="_blank" rel="noopener">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+              GitHub Code
+            </a>
+            <a class="btn btn-secondary btn-sm" href="reports/converter_report.pdf" target="_blank">
+              📄 Tech Report
+            </a>
+          </div>
         </div>
 
+        <!-- Project 3 -->
         <div class="proj-card">
           <div>
             <div class="proj-type">AI & Power Systems</div>
@@ -564,14 +583,22 @@
               <span>Python</span><span>Scikit-Learn</span><span>Pandas</span><span>Time-Series</span>
             </div>
           </div>
-          <a class="btn btn-secondary" href="#" style="align-self: flex-start;">Technical Documentation →</a>
+          <div class="action-links">
+            <a class="btn btn-secondary btn-sm" href="https://github.com/yourusername/grid-load-forecaster" target="_blank" rel="noopener">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+              GitHub Code
+            </a>
+            <a class="btn btn-secondary btn-sm" href="reports/grid_forecaster_report.pdf" target="_blank">
+              📄 Tech Report
+            </a>
+          </div>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- SECTION 5: CONTACT -->
+  <!-- CONTACT MODULE -->
   <section id="contact" style="border-bottom:none;">
     <div class="wrap">
       <div class="sec-header">
@@ -581,7 +608,7 @@
       <div class="contact-box">
         <div>
           <h3 style="font-size: 20px; font-weight:700; margin-bottom: 12px;">Let's Connect</h3>
-          <p style="color: var(--text-muted); font-size: 15px; line-height: 1.6;">
+          <p style="color: var(--color-text-muted); font-size: 15px; line-height: 1.6;">
             I am actively open to discussing research collaborations, graduate program opportunities, engineering roles, or consulting inquiries.
           </p>
         </div>
@@ -606,7 +633,7 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- FOOTER MODULE -->
   <footer>
     <div class="wrap">
       <p>© 2026 Hassaan R. — B.S. Electrical Engineering | Designed for Academic & Professional Opportunities.</p>
