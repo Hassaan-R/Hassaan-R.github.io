@@ -488,7 +488,7 @@
     .titleblock {
       border: 1px solid var(--line-strong);
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
+      grid-template-columns: 1.5fr 1fr 1.5fr 1fr 1fr;
     }
 
     .titleblock > div {
@@ -572,6 +572,10 @@
       </p>
       <div class="hero-actions">
         <a class="btn primary" href="#projects">View Projects</a>
+        <!-- Resume Download Link -->
+        <a class="btn ghost" href="resume.pdf" download="Hassaan_R_Resume.pdf">
+          <span>↓</span> Download Resume
+        </a>
         <a class="btn ghost" href="#contact">Get in Touch</a>
       </div>
     </div>
@@ -606,7 +610,10 @@
             <dt>Core Focus</dt>
             <dd>Power Systems, Power Electronics, Embedded Systems &amp; AI</dd>
           </div>
-          
+          <div class="fact">
+            <dt>Fellowships</dt>
+            <dd>Harvard ALP &amp; AI/ML Fellow</dd>
+          </div>
           <div class="fact">
             <dt>Based in</dt>
             <dd>Lahore, Pakistan</dd>
@@ -631,7 +638,7 @@
           <h3>Embedded Systems</h3>
           <ul>
             <li>Embedded C / C++</li>
-            <li>Microcontrollers (STM32, ESP32)</li>
+            <li>Microcontrollers (ARM, PIC)</li>
             <li>RTOS &amp; Firmware</li>
             <li>UART, SPI, I2C, CAN</li>
           </ul>
@@ -643,7 +650,7 @@
             <li>Python</li>
             <li>ML Algorithms &amp; Neural Nets</li>
             <li>Data Preprocessing</li>
-            <li>Sklearn/ pytorch</li>
+            <li>Edge AI / TinyML</li>
           </ul>
         </div>
         <!-- Power Group -->
@@ -651,7 +658,7 @@
           <h3>Power Electronics</h3>
           <ul>
             <li>Power Converters (DC-DC/AC)</li>
-            <li>Switch Gears</li>
+            <li>Grid Infrastructure</li>
             <li>Circuit Simulation (MATLAB/Simulink)</li>
             <li>Power System Protection</li>
           </ul>
@@ -661,11 +668,9 @@
           <h3>Tools &amp; Lab</h3>
           <ul>
             <li>Git &amp; GitHub</li>
-            <li>Logic analyzer </li>
-            <li>vs code </li>
-            <li>PCB Design/Kicad &amp; Schematics</li>
-            <li>AutoCad electrical &amp; LTSpice</li>
-            <li>CubeIde</li>
+            <li>Oscilloscopes &amp; Logic Analyzers</li>
+            <li>PCB Design &amp; Schematics</li>
+            <li>Keil uVision / MPLAB</li>
           </ul>
         </div>
       </div>
@@ -783,8 +788,13 @@
         <h2>Contact</h2>
         <span class="sec-index">SEC. 05 / TITLE BLOCK</span>
       </div>
-      <p style="color:var(--slate); max-width:56ch; margin-bottom:40px;">
+      <p style="color:var(--slate); max-width:56ch; margin-bottom:20px;">
         Interested in discussing embedded hardware designs, AI/ML integrations, or power systems engineering? Reach out anytime!
+      </p>
+      <!-- Direct Contact Details Line -->
+      <p style="font-family: var(--mono); font-size: 14px; color: var(--paper); margin-bottom: 40px;">
+        <span style="color: var(--cyan);">Phone:</span> <a href="tel:+923001234567" style="text-decoration: underline;">+92 300 1234567</a> &nbsp;|&nbsp; 
+        <span style="color: var(--cyan);">Email:</span> <a href="mailto:hassaan@example.com" style="text-decoration: underline;">hassaan@example.com</a>
       </p>
     </div>
   </section>
@@ -801,8 +811,12 @@
           <dd>Hassaan R. (EE)</dd>
         </div>
         <div>
+          <dt>Phone</dt>
+          <dd><a href="tel:+923001234567">+92 300 1234567</a></dd>
+        </div>
+        <div>
           <dt>Email</dt>
-          <dd><a href="mailto:hassaan6972@gmail.com">hassaan6972@gmail.com</a></dd>
+          <dd><a href="mailto:hassaan@example.com">hassaan@example.com</a></dd>
         </div>
         <div>
           <dt>GitHub</dt>
@@ -810,7 +824,7 @@
         </div>
         <div>
           <dt>LinkedIn</dt>
-          <dd><a href="https://linkedin.com/in/hassaanr" target="_blank" rel="noopener">/in/yourusername</a></dd>
+          <dd><a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">/in/yourusername</a></dd>
         </div>
       </dl>
       <p class="bottom-note">© 2026 Hassaan R. — Built &amp; hosted on GitHub Pages.</p>
