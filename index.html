@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hassaan Raza — Electrical Engineer</title>
-  <meta name="description" content="Hassaan Raza — Electrical Engineering graduate (UET Lahore) specializing in high-voltage power systems, industrial PLC automation, embedded microcontroller control, and applied machine learning.">
+  <title>Hassaan Raza — Electrical Engineering | Academic Portfolio</title>
+  <meta name="description" content="Hassaan Raza — Electrical Engineering graduate from UET Lahore, with interests in power systems, industrial automation, embedded systems, intelligent control, and engineering research.">
 
   <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="Hassaan Raza — Electrical Engineer">
-  <meta property="og:description" content="Power systems, industrial automation, embedded control & smart technology. B.E Electrical Engineering, University of Engineering and Technology Lahore.">
+  <meta property="og:title" content="Hassaan Raza — Electrical Engineering | Academic Portfolio">
+  <meta property="og:description" content="Electrical Engineering graduate from UET Lahore focused on power systems, industrial automation, embedded systems, and intelligent engineering applications.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Hassaan Raza — Electrical Engineer">
-  <meta name="twitter:description" content="Power systems, industrial automation, embedded control & smart technology. B.E Electrical Engineering, University of Engineering and Technology Lahore.">
+  <meta name="twitter:title" content="Hassaan Raza — Electrical Engineering | Academic Portfolio">
+  <meta name="twitter:description" content="Electrical Engineering graduate from UET Lahore focused on power systems, industrial automation, embedded systems, and intelligent engineering applications.">
 
   <!-- Favicon (generated, initials "HR", dark/cyan) -->
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23060A12'/%3E%3Crect x='1' y='1' width='62' height='62' rx='9' fill='none' stroke='%2300E5FF' stroke-opacity='0.5' stroke-width='1.5'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='24' font-weight='700' fill='%2300E5FF' text-anchor='middle'%3EHR%3C/text%3E%3C/svg%3E">
@@ -544,6 +544,35 @@
       .nav-links li { width: 100%; }
       .nav-links a, .nav-icon-link { display: block; padding: 12px 0; width: 100%; }
     }
+
+    /* Scholarship / academic portfolio enhancements */
+    .research-intro {
+      padding: 28px 32px;
+      margin-bottom: 24px;
+      border-left: 3px solid var(--accent-current);
+    }
+
+    .research-intro p {
+      color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.75;
+      max-width: 900px;
+    }
+
+    .research-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .academic-note {
+      color: var(--text-tertiary);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .research-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -557,7 +586,8 @@
       </button>
       <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
-        <li><a href="#skills">Capabilities</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -574,9 +604,9 @@
       <div class="hero-grid">
         <div>
           <div class="hero-meta">
-            <span class="badge-status">Open for Career &amp; Professional Opportunities</span>
+            <span class="badge-status">Open to Graduate Study &amp; Research Opportunities</span>
           </div>
-          <h1>Electrical Engineer &amp;<br><span>Automation</span> Specialist</h1>
+          <h1>Electrical Engineering<br><span>Graduate &amp; Researcher</span></h1>
           <p class="hero-subtitle">
             Specializing in high-voltage power systems, industrial PLC automation, embedded microcontroller control, and machine learning applications. B.S. Electrical Engineering Graduate from UET Lahore.
           </p>
@@ -585,7 +615,7 @@
               <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
               Download CV
             </a>
-            <a class="btn btn-secondary" href="#contact">Get in Touch</a>
+            <a class="btn btn-secondary" href="#about">Academic Profile</a>
             <a class="btn btn-secondary" href="https://github.com/Hassaan-R" target="_blank" rel="noopener">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
               View GitHub
@@ -644,8 +674,8 @@
   <section id="about">
     <div class="wrap">
       <div class="sec-header">
-        <h2>Professional Profile</h2>
-        <span class="sec-tag">overview</span>
+        <h2>Academic Profile</h2>
+        <span class="sec-tag">about</span>
       </div>
       <div class="summary-grid">
         <div class="bio-text">
@@ -670,14 +700,66 @@
             <dd>UET Lahore, Pakistan (2022–2026)</dd>
           </div>
           <div class="fact-item">
-            <dt>Core Fields</dt>
-            <dd>Power Systems, Industrial Automation &amp; Embedded Control</dd>
+            <dt>Research Direction</dt>
+            <dd>Power Systems, Automation &amp; Intelligent Control</dd>
           </div>
           <div class="fact-item">
-            <dt>Primary Location</dt>
-            <dd>Lahore, Pakistan</dd>
+            <dt>Academic Goal</dt>
+            <dd>International Graduate Study</dd>
           </div>
         </dl>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- RESEARCH INTERESTS MODULE -->
+  <section id="research">
+    <div class="wrap">
+      <div class="sec-header">
+        <h2>Research Interests</h2>
+        <span class="sec-tag">future study</span>
+      </div>
+
+      <div class="research-intro bracket-panel">
+        <p>
+          My graduate-study interests are centered on the development of reliable,
+          intelligent, and energy-efficient engineering systems. I am particularly
+          interested in research that connects electrical power systems with
+          automation, embedded intelligence, and industrial digitalization.
+        </p>
+      </div>
+
+      <div class="skills-grid research-grid">
+        <div class="skill-card bracket-panel">
+          <h3>Power &amp; Energy</h3>
+          <ul>
+            <li>Power System Analysis</li>
+            <li>Protection &amp; Grid Stability</li>
+            <li>Smart Grid Technologies</li>
+            <li>Renewable &amp; Energy Systems</li>
+          </ul>
+        </div>
+
+        <div class="skill-card bracket-panel">
+          <h3>Automation &amp; Control</h3>
+          <ul>
+            <li>Industrial Automation</li>
+            <li>Process Control</li>
+            <li>PLC / SCADA / DCS</li>
+            <li>Intelligent Control Systems</li>
+          </ul>
+        </div>
+
+        <div class="skill-card bracket-panel">
+          <h3>Embedded Intelligence</h3>
+          <ul>
+            <li>Embedded Control</li>
+            <li>Real-Time Systems</li>
+            <li>Computer Vision</li>
+            <li>Edge / Intelligent Automation</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -686,8 +768,8 @@
   <section id="skills">
     <div class="wrap">
       <div class="sec-header">
-        <h2>Technical Capabilities</h2>
-        <span class="sec-tag">skill matrix</span>
+        <h2>Technical Skills</h2>
+        <span class="sec-tag">engineering</span>
       </div>
       <div class="skills-grid">
         <div class="skill-card bracket-panel">
@@ -720,10 +802,10 @@
         <div class="skill-card bracket-panel">
           <h3>Machine Learning &amp; Tools</h3>
           <ul>
-            <li>Machine Learning Specialization</li>
+            <li>Python &amp; Machine Learning</li>
             <li>Computer Vision Image Processing</li>
-            <li>PLC Dojo Fundamentals</li>
-            <li>Prime Minister's Laptop Awardee</li>
+            <li>PLC &amp; Industrial Control</li>
+            <li>Engineering Merit Awards</li>
           </ul>
         </div>
       </div>
@@ -734,10 +816,30 @@
   <section id="experience">
     <div class="wrap">
       <div class="sec-header">
-        <h2>Experience &amp; Education</h2>
-        <span class="sec-tag">career path</span>
+        <h2>Academic &amp; Professional Journey</h2>
+        <span class="sec-tag">journey</span>
       </div>
       <div class="exp-list">
+
+
+        <!-- Entry 0 -->
+        <div class="exp-card bracket-panel">
+          <div class="exp-meta">
+            <div>AUGUST 2026 – PRESENT</div>
+            <div class="exp-org">INTECH Process Automation</div>
+            <div class="exp-location"><span aria-hidden="true">📍</span> Lahore, Pakistan</div>
+          </div>
+          <div class="exp-body">
+            <h3>Trainee Electrical &amp; Instrumentation Engineer</h3>
+            <p>
+              Supporting engineering activities in industrial automation,
+              electrical systems, instrumentation, and process control.
+              Developing practical understanding of PLC, SCADA, DCS,
+              I/O systems, control loops, P&amp;IDs, instrument documentation,
+              field devices, testing, commissioning, and troubleshooting.
+            </p>
+          </div>
+        </div>
 
         <!-- Entry 1 -->
         <div class="exp-card bracket-panel">
@@ -780,6 +882,24 @@
           </div>
         </div>
 
+
+        <!-- Academic Achievement -->
+        <div class="exp-card bracket-panel">
+          <div class="exp-meta">
+            <div>ACADEMIC DISTINCTIONS</div>
+            <div class="exp-org">Merit &amp; Scholarships</div>
+          </div>
+          <div class="exp-body">
+            <h3>Academic Merit &amp; Recognition</h3>
+            <p>
+              Prime Minister's Laptop Award (2025), PEEF Merit Scholarship
+              (2017–2019), and CARE Foundation Merit Scholarship (2019–2021).
+              These distinctions reflect sustained academic performance and
+              access to merit-based educational support.
+            </p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -788,8 +908,8 @@
   <section id="projects">
     <div class="wrap">
       <div class="sec-header">
-        <h2>Selected Engineering Projects</h2>
-        <span class="sec-tag">portfolio</span>
+        <h2>Selected Academic Projects</h2>
+        <span class="sec-tag">projects</span>
       </div>
       <div class="projects-grid">
 
@@ -840,14 +960,14 @@
   <section id="contact" style="border-bottom:none;">
     <div class="wrap">
       <div class="sec-header">
-        <h2>Contact &amp; Official Details</h2>
-        <span class="sec-tag">reach out</span>
+        <h2>Graduate Study &amp; Collaboration</h2>
+        <span class="sec-tag">connect</span>
       </div>
       <div class="contact-box bracket-panel">
         <div>
           <h3 style="font-size: 20px; font-weight:700; margin-bottom: 12px; font-family: var(--font-display);">Let's Connect</h3>
           <p style="color: var(--text-secondary); font-size: 15px; line-height: 1.6;">
-            I am actively open to discussing engineering roles, industrial automation projects, power systems positions, and collaborative technical opportunities.
+            I welcome opportunities for Master's study, scholarships, research collaboration, academic networking, and engineering projects in electrical engineering and automation.
           </p>
         </div>
         <div class="contact-details">
@@ -880,7 +1000,7 @@
         <a href="https://www.linkedin.com/in/hassaaanraza/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="mailto:hassaan6972@gmail.com">Email</a>
       </div>
-      <p>© 2026 Hassaan Raza — B.S. Electrical Engineering | University of Engineering and Technology Lahore</p>
+      <p>© 2026 Hassaan Raza — Electrical Engineering | UET Lahore | Academic Portfolio</p>
     </div>
   </footer>
 
