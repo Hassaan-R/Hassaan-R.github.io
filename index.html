@@ -14,93 +14,84 @@
   <meta name="twitter:title" content="Hassaan Raza — Electrical Engineering | Academic Portfolio">
   <meta name="twitter:description" content="Electrical Engineering graduate from UET Lahore focused on power systems, industrial automation, embedded systems, and intelligent engineering applications.">
 
-  <!-- Favicon (generated, initials "HR", navy/brass) -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%2310182B'/%3E%3Crect x='1' y='1' width='62' height='62' rx='7' fill='none' stroke='%23B8863C' stroke-opacity='0.6' stroke-width='1.5'/%3E%3Ctext x='32' y='41' font-family='Georgia,serif' font-size='23' font-weight='700' fill='%23F2F4F7' text-anchor='middle'%3EHR%3C/text%3E%3C/svg%3E">
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b1329'/%3E%3Ctext x='32' y='42' font-family='Inter, sans-serif' font-size='24' font-weight='800' fill='%2300f2fe' text-anchor='middle'%3EHR%3C/text%3E%3C/svg%3E">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     /* ==========================================================================
-       MODULE 1: DESIGN TOKENS
-       ========================================================================== */
+        MODERN CYBER-INDUSTRIAL DESIGN TOKENS
+        ========================================================================== */
     :root {
-      /* Surfaces — cool drafting paper, not warm cream */
-      --paper: #F1F3F7;
-      --paper-raised: #FFFFFF;
-      --paper-sunken: #E7EAF0;
+      --bg-deep: #070b19;
+      --bg-surface: #0f172a;
+      --bg-card: rgba(30, 41, 59, 0.7);
+      --bg-card-hover: rgba(51, 65, 85, 0.8);
+      
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
 
-      /* Fine graph-paper texture */
-      --grid-line: rgba(29, 53, 87, 0.035);
+      --accent-cyan: #00f2fe;
+      --accent-blue: #4facfe;
+      --accent-glow: rgba(0, 242, 254, 0.15);
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
 
-      /* Ink */
-      --ink-900: #10182B;
-      --ink-700: #3C4658;
-      --ink-400: #7C879C;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-active: rgba(0, 242, 254, 0.4);
 
-      /* Rules */
-      --line: #D9DEE6;
-      --line-strong: #B9C2D0;
-      --line-active: #1D3557;
-
-      /* Accents — deep academic navy + brass, used with restraint */
-      --accent-navy: #1D3557;
-      --accent-navy-soft: rgba(29, 53, 87, 0.06);
-      --accent-navy-dim: rgba(29, 53, 87, 0.28);
-      --accent-brass: #A9782F;
-      --accent-brass-soft: rgba(169, 120, 47, 0.12);
-      --accent-sage: #4C7A5B;
-      --accent-sage-soft: rgba(76, 122, 91, 0.12);
-
-      /* Typography */
-      --font-display: 'Fraunces', Georgia, serif;
-      --font-body: 'Inter', -apple-system, sans-serif;
+      --font-main: 'Plus Jakarta Sans', -apple-system, sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
 
-      /* Tokens */
-      --radius-sm: 3px;
-      --radius-md: 6px;
-      --nav-height: 68px;
-      --shadow-card: 0 1px 2px rgba(16, 24, 43, 0.04), 0 4px 16px rgba(16, 24, 43, 0.05);
-      --shadow-card-hover: 0 2px 4px rgba(16, 24, 43, 0.05), 0 12px 28px rgba(16, 24, 43, 0.09);
-      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --nav-height: 76px;
+
+      --shadow-elevation: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+      --shadow-glow: 0 0 25px rgba(0, 242, 254, 0.12);
+      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     /* ==========================================================================
-       MODULE 2: BASE & RESET
-       ========================================================================== */
+        BASE & RESET
+        ========================================================================== */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
-      background-color: var(--paper);
-      background-image:
-        linear-gradient(var(--grid-line) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-      background-size: 34px 34px;
-      color: var(--ink-900);
-      font-family: var(--font-body);
-      line-height: 1.65;
+      background-color: var(--bg-deep);
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(79, 172, 254, 0.06) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(0, 242, 254, 0.05) 0%, transparent 40%);
+      color: var(--text-main);
+      font-family: var(--font-main);
+      line-height: 1.7;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
-    a { color: var(--accent-navy); text-decoration: none; transition: color 0.2s ease; }
-    a:hover { color: var(--accent-brass); }
 
-    ::selection { background: var(--accent-navy); color: var(--paper-raised); }
+    a { color: var(--accent-blue); text-decoration: none; transition: var(--transition); }
+    a:hover { color: var(--accent-cyan); }
 
-    ::-webkit-scrollbar { width: 10px; height: 10px; }
-    ::-webkit-scrollbar-track { background: var(--paper); }
-    ::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 5px; border: 2px solid var(--paper); }
-    ::-webkit-scrollbar-thumb:hover { background: var(--accent-navy-dim); }
+    ::selection { background: var(--accent-cyan); color: var(--bg-deep); }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg-deep); }
+    ::-webkit-scrollbar-thumb { background: var(--bg-card); border-radius: 4px; border: 1px solid var(--border-subtle); }
+    ::-webkit-scrollbar-thumb:hover { background: var(--text-dim); }
 
     :focus-visible {
-      outline: 2px solid var(--accent-navy);
-      outline-offset: 3px;
-      border-radius: 2px;
+      outline: 2px solid var(--accent-cyan);
+      outline-offset: 4px;
+      border-radius: var(--radius-sm);
     }
 
-    .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out); }
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.8s var(--transition), transform 0.8s var(--transition); }
     .reveal.in-view { opacity: 1; transform: translateY(0); }
 
     @media (prefers-reduced-motion: reduce) {
@@ -110,415 +101,432 @@
     }
 
     /* ==========================================================================
-       MODULE 3: REUSABLE LAYOUT & UTILITIES
-       ========================================================================== */
-    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
-    section {
-      padding: 92px 0;
-      scroll-margin-top: var(--nav-height);
-      position: relative;
-    }
-    section + section { border-top: 1px solid var(--line); }
-
-    .sec-header {
-      margin-bottom: 46px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
+        LAYOUT & UTILITIES
+        ========================================================================== */
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 32px; }
+    section { padding: 110px 0; scroll-margin-top: var(--nav-height); position: relative; }
+    
+    .sec-header { margin-bottom: 56px; display: flex; flex-direction: column; gap: 10px; }
     .sec-eyebrow {
       font-family: var(--font-mono);
-      font-size: 11.5px;
-      font-weight: 500;
-      color: var(--accent-brass);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent-cyan);
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.15em;
     }
     .sec-header h2 {
-      font-family: var(--font-display);
-      font-size: 32px;
-      font-weight: 600;
-      color: var(--ink-900);
-      letter-spacing: -0.01em;
+      font-size: clamp(28px, 3.5vw, 40px);
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
     }
 
-    /* Card treatment — flat academic surface, soft elevation, no glow */
     .card-panel {
       position: relative;
-      background: var(--paper-raised);
-      border: 1px solid var(--line);
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
-      box-shadow: var(--shadow-card);
-      transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s var(--ease-out);
+      box-shadow: var(--shadow-elevation);
+      transition: var(--transition);
     }
     .card-panel:hover {
-      border-color: var(--line-strong);
-      box-shadow: var(--shadow-card-hover);
-      transform: translateY(-2px);
+      border-color: var(--border-active);
+      box-shadow: var(--shadow-elevation), var(--shadow-glow);
+      transform: translateY(-4px);
     }
 
     /* ==========================================================================
-       MODULE 4: UI COMPONENTS (BUTTONS, BADGES, LINKS)
-       ========================================================================== */
+        UI COMPONENTS
+        ========================================================================== */
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 12px 22px;
-      font-family: var(--font-body);
-      font-size: 13.5px;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 28px;
+      font-family: var(--font-main);
+      font-size: 14px;
       font-weight: 600;
-      letter-spacing: 0.01em;
+      letter-spacing: 0.02em;
       border-radius: var(--radius-sm);
-      transition: all 0.2s var(--ease-out);
+      transition: var(--transition);
       cursor: pointer;
       border: 1px solid transparent;
     }
     .btn-primary {
-      background: var(--accent-navy);
-      color: #FFFFFF !important;
-      box-shadow: var(--shadow-card);
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+      color: var(--bg-deep) !important;
+      font-weight: 700;
+      box-shadow: 0 4px 20px rgba(0, 242, 254, 0.3);
     }
     .btn-primary:hover {
-      background: #14283F;
-      transform: translateY(-1px);
-      box-shadow: var(--shadow-card-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(0, 242, 254, 0.5);
+      filter: brightness(1.1);
     }
     .btn-primary:active { transform: translateY(0); }
 
     .btn-secondary {
-      background: var(--paper-raised);
-      color: var(--ink-900) !important;
-      border: 1px solid var(--line-strong);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text-main) !important;
+      border-color: var(--border-subtle);
     }
     .btn-secondary:hover {
-      border-color: var(--accent-navy);
-      color: var(--accent-navy) !important;
-      transform: translateY(-1px);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--text-muted);
+      transform: translateY(-2px);
     }
     .btn-secondary:active { transform: translateY(0); }
 
     .badge-status {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: var(--accent-sage-soft);
-      color: var(--accent-sage);
+      gap: 10px;
+      background: rgba(16, 185, 129, 0.1);
+      color: var(--accent-emerald);
       font-family: var(--font-mono);
-      font-size: 11.5px;
+      font-size: 12px;
       font-weight: 500;
-      letter-spacing: 0.04em;
-      padding: 7px 13px;
-      border-radius: 20px;
-      border: 1px solid rgba(76, 122, 91, 0.28);
+      letter-spacing: 0.05em;
+      padding: 8px 16px;
+      border-radius: 30px;
+      border: 1px solid rgba(16, 185, 129, 0.25);
     }
     .badge-status::before {
       content: "";
-      width: 6px; height: 6px;
-      background: var(--accent-sage);
+      width: 8px; height: 8px;
+      background: var(--accent-emerald);
       border-radius: 50%;
+      box-shadow: 0 0 10px var(--accent-emerald);
+      animation: pulseGlow 2s infinite;
+    }
+
+    @keyframes pulseGlow {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.25); opacity: 1; box-shadow: 0 0 15px var(--accent-emerald); }
+      100% { transform: scale(0.95); opacity: 0.8; }
     }
 
     /* ==========================================================================
-       MODULE 5: NAVIGATION COMPONENT
-       ========================================================================== */
+        NAVIGATION
+        ========================================================================== */
     nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(241, 243, 247, 0.92);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--line);
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(7, 11, 25, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
     }
     nav .wrap {
       display: flex; align-items: center; justify-content: space-between; height: var(--nav-height);
     }
     .brand {
-      display: flex; align-items: center; gap: 10px;
+      display: flex; align-items: center; gap: 14px;
     }
     .brand-mark {
-      width: 32px; height: 32px;
-      border: 1.5px solid var(--accent-navy);
-      border-radius: 4px;
+      width: 42px; height: 42px;
+      background: linear-gradient(135deg, var(--bg-surface), var(--bg-deep));
+      border: 1.5px solid var(--accent-cyan);
+      border-radius: var(--radius-sm);
       display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 13px;
-      color: var(--accent-navy);
+      font-family: var(--font-mono);
+      font-weight: 800;
+      font-size: 15px;
+      color: var(--accent-cyan);
+      box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
     }
-    .brand-text {
-      display: flex; flex-direction: column; line-height: 1.2;
-    }
+    .brand-text { display: flex; flex-direction: column; line-height: 1.25; }
     .brand-text strong {
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: 14.5px;
-      color: var(--ink-900);
+      font-family: var(--font-main);
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--text-main);
+      letter-spacing: -0.01em;
     }
     .brand-text span {
       font-family: var(--font-mono);
-      font-size: 10px;
-      color: var(--ink-400);
-      letter-spacing: 0.06em;
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
       text-transform: uppercase;
     }
-    .nav-links { display: flex; align-items: center; gap: 30px; list-style: none; }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
     .nav-links a {
       position: relative;
-      font-family: var(--font-body); font-size: 13.5px; font-weight: 500;
-      color: var(--ink-700);
+      font-size: 14px; font-weight: 500;
+      color: var(--text-muted);
     }
     .nav-links a::after {
       content: "";
-      position: absolute; left: 0; bottom: -5px; width: 0; height: 1.5px;
-      background: var(--accent-brass);
-      transition: width 0.25s var(--ease-out);
+      position: absolute; left: 0; bottom: -6px; width: 0; height: 2px;
+      background: var(--accent-cyan);
+      transition: width 0.3s var(--transition);
+      border-radius: 2px;
     }
-    .nav-links a:hover { color: var(--ink-900); }
+    .nav-links a:hover { color: var(--text-main); }
     .nav-links a:hover::after { width: 100%; }
-    .nav-icon-link { display: inline-flex; align-items: center; color: var(--ink-700); }
-    .nav-icon-link:hover { color: var(--accent-navy); }
+    .nav-icon-link { display: inline-flex; align-items: center; color: var(--text-muted); }
+    .nav-icon-link:hover { color: var(--accent-cyan); }
 
     .nav-toggle {
       display: none;
-      background: var(--paper-raised);
-      border: 1px solid var(--line-strong);
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
       border-radius: var(--radius-sm);
-      width: 38px;
-      height: 38px;
-      align-items: center;
-      justify-content: center;
+      width: 42px; height: 42px;
+      align-items: center; justify-content: center;
       cursor: pointer;
-      color: var(--ink-900);
+      color: var(--text-main);
     }
 
     /* ==========================================================================
-       MODULE 6: HERO SECTION
-       ========================================================================== */
+        HERO SECTION
+        ========================================================================== */
     .hero {
-      padding: 84px 0 0;
-      border-bottom: 1px solid var(--line);
-      overflow: hidden;
+      padding: 100px 0 60px;
+      border-bottom: 1px solid var(--border-subtle);
       position: relative;
     }
     .hero-grid {
       display: grid;
       grid-template-columns: 1.2fr 1fr;
-      gap: 52px;
-      align-items: start;
+      gap: 60px;
+      align-items: center;
     }
-    .hero-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+    .hero-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
     .hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(32px, 4.2vw, 48px);
-      font-weight: 600;
-      line-height: 1.16;
-      margin-bottom: 20px;
-      letter-spacing: -0.01em;
-      color: var(--ink-900);
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      letter-spacing: -0.03em;
+      color: var(--text-main);
     }
-    .hero h1 em { font-style: italic; color: var(--accent-navy); font-weight: 500; }
+    .hero h1 em { 
+      font-style: normal; 
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
     .hero-subtitle {
-      font-size: 16.5px; color: var(--ink-700); max-width: 540px; line-height: 1.75; margin-bottom: 32px;
+      font-size: 17px; color: var(--text-muted); max-width: 580px; line-height: 1.8; margin-bottom: 36px;
     }
-    .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 56px; }
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 40px; }
 
-    /* Figure-style technical diagram, academic-paper convention */
-    .fig-wrap { padding-top: 6px; }
+    /* Technical Interactive Frame */
+    .fig-wrap { position: relative; }
     .fig-frame {
-      border: 1px solid var(--line);
-      border-radius: var(--radius-md);
-      background: var(--paper-raised);
-      box-shadow: var(--shadow-card);
-      padding: 30px 26px 22px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-active);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-elevation), 0 0 40px rgba(0, 242, 254, 0.08);
+      padding: 36px 30px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .fig-frame::before {
+      content: "";
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
     }
     .sld {
       position: relative;
       display: flex;
       flex-direction: column;
-      gap: 26px;
+      gap: 28px;
     }
     .sld-rail {
       position: absolute;
-      left: 21px;
-      top: 21px;
-      bottom: 21px;
-      width: 1.5px;
-      background: var(--line-strong);
+      left: 23px;
+      top: 25px;
+      bottom: 25px;
+      width: 2px;
+      background: rgba(255, 255, 255, 0.1);
     }
     .sld-pulse {
       position: absolute;
-      left: 21px;
+      left: 23px;
       top: 0;
-      width: 7px; height: 7px;
-      margin-left: -3.25px;
+      width: 10px; height: 10px;
+      margin-left: -4px;
       border-radius: 50%;
-      background: var(--accent-brass);
-      box-shadow: 0 0 0 3px var(--accent-brass-soft);
-      animation: sldTravel 6s linear infinite;
+      background: var(--accent-cyan);
+      box-shadow: 0 0 15px var(--accent-cyan), 0 0 5px #fff;
+      animation: sldTravel 5s ease-in-out infinite;
     }
     @keyframes sldTravel {
-      0%   { top: 0%;   opacity: 0; }
-      8%   { opacity: 1; }
-      92%  { opacity: 1; }
+      0% { top: 0%; opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
       100% { top: 100%; opacity: 0; }
     }
-    .sld-node { position: relative; display: flex; align-items: center; gap: 15px; z-index: 1; }
+    .sld-node { position: relative; display: flex; align-items: center; gap: 18px; z-index: 2; }
     .sld-node-mark {
-      width: 42px; height: 42px;
+      width: 48px; height: 48px;
       border-radius: 50%;
-      background: var(--paper-raised);
-      border: 1.5px solid var(--line-strong);
+      background: var(--bg-deep);
+      border: 1.5px solid var(--border-active);
       display: flex; align-items: center; justify-content: center;
       font-family: var(--font-mono);
-      font-size: 9.5px;
-      font-weight: 600;
-      color: var(--accent-navy);
-      flex-shrink: 0;
-      transition: border-color 0.25s ease;
-    }
-    .sld-node:hover .sld-node-mark { border-color: var(--accent-navy); }
-    .sld-node-label { font-family: var(--font-body); font-size: 13.5px; color: var(--ink-900); font-weight: 600; }
-    .sld-node-sub { font-family: var(--font-mono); font-size: 11px; color: var(--ink-400); margin-top: 2px; }
-    .fig-caption {
-      margin-top: 18px;
-      padding-top: 14px;
-      border-top: 1px solid var(--line);
-      font-family: var(--font-mono);
       font-size: 11px;
-      color: var(--ink-400);
+      font-weight: 700;
+      color: var(--accent-cyan);
+      flex-shrink: 0;
+      box-shadow: 0 0 15px rgba(0, 242, 254, 0.1);
+      transition: var(--transition);
+    }
+    .sld-node:hover .sld-node-mark {
+      background: var(--accent-cyan);
+      color: var(--bg-deep);
+      box-shadow: 0 0 20px var(--accent-cyan);
+    }
+    .sld-node-label { font-family: var(--font-main); font-size: 14.5px; color: var(--text-main); font-weight: 600; }
+    .sld-node-sub { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); margin-top: 3px; }
+    .fig-caption {
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-subtle);
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      color: var(--text-dim);
       letter-spacing: 0.02em;
     }
-    .fig-caption strong { color: var(--ink-700); font-weight: 600; }
+    .fig-caption strong { color: var(--text-muted); font-weight: 600; }
 
-    @media (max-width: 900px) {
-      .hero-grid { grid-template-columns: 1fr; }
+    @media (max-width: 960px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
     }
 
     /* ==========================================================================
-       MODULE 7: ABOUT & SUMMARY GRID
-       ========================================================================== */
-    .summary-grid { display: grid; grid-template-columns: 1.7fr 1fr; gap: 52px; align-items: start; }
-    .bio-text p { margin-bottom: 17px; color: var(--ink-700); font-size: 15.5px; }
-    .bio-text strong { color: var(--ink-900); font-weight: 600; }
+        ABOUT & SUMMARY GRID
+        ========================================================================== */
+    .summary-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 40px; align-items: start; }
+    .bio-text p { margin-bottom: 20px; color: var(--text-muted); font-size: 16px; line-height: 1.8; }
+    .bio-text strong { color: var(--text-main); font-weight: 600; }
 
-    .quick-facts { padding: 30px; }
-    .fact-item { margin-bottom: 21px; padding-left: 15px; border-left: 2px solid var(--accent-brass); }
+    .quick-facts { padding: 36px; }
+    .fact-item { margin-bottom: 24px; padding-left: 18px; border-left: 2.5px solid var(--accent-cyan); }
     .fact-item:last-child { margin-bottom: 0; }
     .fact-item dt {
       font-family: var(--font-mono);
-      font-size: 10.5px; font-weight: 500; color: var(--ink-400); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px;
+      font-size: 11px; font-weight: 600; color: var(--accent-blue); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px;
     }
-    .fact-item dd { font-size: 14.5px; font-weight: 600; color: var(--ink-900); font-family: var(--font-display); }
+    .fact-item dd { font-size: 15px; font-weight: 600; color: var(--text-main); font-family: var(--font-main); }
 
     /* ==========================================================================
-       MODULE 8: RESEARCH & SKILLS GRIDS
-       ========================================================================== */
+        RESEARCH INTERESTS MODULE
+        ========================================================================== */
     .research-intro {
-      padding: 30px 34px;
-      margin-bottom: 28px;
-      border-left: 3px solid var(--accent-navy);
-      background: var(--paper-raised);
+      padding: 32px 36px;
+      margin-bottom: 32px;
+      border-left: 4px solid var(--accent-cyan);
+      background: var(--bg-surface);
     }
-    .research-intro p { color: var(--ink-700); font-size: 15.5px; line-height: 1.8; max-width: 880px; }
+    .research-intro p { color: var(--text-muted); font-size: 16px; line-height: 1.8; max-width: 900px; }
 
-    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 22px; }
-    .skill-card { padding: 28px; }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+    .skill-card { padding: 32px; }
     .skill-card h3 {
-      display: flex; align-items: center; gap: 10px;
-      font-family: var(--font-display);
-      font-size: 16px; font-weight: 600; margin-bottom: 18px; padding-bottom: 14px;
-      border-bottom: 1px solid var(--line);
-      color: var(--ink-900);
+      display: flex; align-items: center; gap: 12px;
+      font-size: 18px; font-weight: 700; margin-bottom: 20px; padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-main);
     }
-    .skill-card h3 svg { flex-shrink: 0; color: var(--accent-navy); }
+    .skill-card h3 svg { flex-shrink: 0; color: var(--accent-cyan); }
     .skill-card ul { list-style: none; }
-    .skill-card li { font-size: 13.5px; color: var(--ink-700); margin-bottom: 10px; display: flex; align-items: baseline; gap: 9px; }
+    .skill-card li { font-size: 14px; color: var(--text-muted); margin-bottom: 12px; display: flex; align-items: baseline; gap: 10px; }
     .skill-card li:last-child { margin-bottom: 0; }
-    .skill-card li::before { content: "—"; color: var(--accent-brass); font-size: 12px; }
+    .skill-card li::before { content: "—"; color: var(--accent-cyan); font-size: 12px; font-weight: 700; }
 
     @media (max-width: 768px) { .research-grid { grid-template-columns: 1fr; } }
 
     /* ==========================================================================
-       MODULE 9: EXPERIENCE & EDUCATION
-       ========================================================================== */
-    .exp-list { display: flex; flex-direction: column; gap: 22px; }
-    .exp-card { padding: 30px; display: grid; grid-template-columns: 200px 1fr; gap: 26px; }
-    .exp-meta { font-family: var(--font-mono); font-size: 11.5px; color: var(--ink-400); letter-spacing: 0.02em; }
-    .exp-org { font-weight: 600; color: var(--accent-navy); margin-top: 6px; font-family: var(--font-body); font-size: 13.5px; }
-    .exp-location { display: flex; align-items: center; gap: 5px; font-family: var(--font-mono); font-size: 11px; color: var(--ink-400); margin-top: 10px; }
-    .exp-body h3 { font-size: 18px; font-weight: 600; color: var(--ink-900); margin-bottom: 11px; font-family: var(--font-display); }
-    .exp-body p { font-size: 14.5px; color: var(--ink-700); line-height: 1.75; }
+        EXPERIENCE & EDUCATION
+        ========================================================================== */
+    .exp-list { display: flex; flex-direction: column; gap: 24px; }
+    .exp-card { padding: 36px; display: grid; grid-template-columns: 220px 1fr; gap: 32px; }
+    .exp-meta { font-family: var(--font-mono); font-size: 12px; color: var(--accent-blue); letter-spacing: 0.04em; }
+    .exp-org { font-weight: 700; color: var(--text-main); margin-top: 8px; font-family: var(--font-main); font-size: 15px; }
+    .exp-location { display: flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 11.5px; color: var(--text-dim); margin-top: 12px; }
+    .exp-body h3 { font-size: 20px; font-weight: 700; color: var(--text-main); margin-bottom: 12px; }
+    .exp-body p { font-size: 15px; color: var(--text-muted); line-height: 1.8; }
 
     /* ==========================================================================
-       MODULE 10: PROJECTS
-       ========================================================================== */
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        PROJECTS
+        ========================================================================== */
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
     .proj-card { padding: 0; display: flex; flex-direction: column; overflow: hidden; }
-    .proj-accent { height: 3px; width: 100%; background: var(--accent-brass); }
-    .proj-card-inner { padding: 28px; display: flex; flex-direction: column; flex-grow: 1; }
-    .proj-type { font-family: var(--font-mono); font-size: 10.5px; font-weight: 600; color: var(--accent-navy); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
-    .proj-card h3 { font-size: 18.5px; font-weight: 600; color: var(--ink-900); margin-bottom: 11px; font-family: var(--font-display); }
-    .proj-card p { font-size: 14px; color: var(--ink-700); margin-bottom: 22px; flex-grow: 1; line-height: 1.7; }
+    .proj-accent { height: 3px; width: 100%; background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan)); }
+    .proj-card-inner { padding: 32px; display: flex; flex-direction: column; flex-grow: 1; }
+    .proj-type { font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--accent-cyan); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 14px; }
+    .proj-card h3 { font-size: 20px; font-weight: 700; color: var(--text-main); margin-bottom: 12px; }
+    .proj-card p { font-size: 14.5px; color: var(--text-muted); margin-bottom: 24px; flex-grow: 1; line-height: 1.75; }
 
-    .tech-stack { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 4px; }
+    .tech-stack { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 4px; }
     .tech-stack span {
-      background: var(--paper-sunken);
-      border: 1px solid var(--line);
-      color: var(--ink-700);
-      font-size: 11.5px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      font-size: 12px;
       font-family: var(--font-mono);
-      padding: 4px 10px;
+      padding: 5px 12px;
       border-radius: var(--radius-sm);
     }
 
-    .projects-footer { margin-top: 40px; display: flex; justify-content: center; }
+    .projects-footer { margin-top: 48px; display: flex; justify-content: center; }
 
     /* ==========================================================================
-       MODULE 11: CONTACT & FOOTER
-       ========================================================================== */
+        CONTACT & FOOTER
+        ========================================================================== */
     .contact-box { padding: 0; overflow: hidden; }
-    .contact-rule { height: 3px; background: linear-gradient(90deg, var(--accent-navy), var(--accent-brass)); }
+    .contact-rule { height: 3px; background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan)); }
     .contact-body {
-      padding: 44px;
+      padding: 48px;
       display: grid;
       grid-template-columns: 1.1fr 1fr;
-      gap: 36px;
+      gap: 40px;
       align-items: center;
     }
-    .contact-details { display: flex; flex-direction: column; gap: 20px; }
-    .contact-detail-item { display: flex; flex-direction: column; padding-left: 15px; border-left: 2px solid var(--accent-brass); }
+    .contact-details { display: flex; flex-direction: column; gap: 24px; }
+    .contact-detail-item { display: flex; flex-direction: column; padding-left: 18px; border-left: 2.5px solid var(--accent-cyan); }
     .contact-detail-item label {
       font-family: var(--font-mono);
-      font-size: 10.5px; font-weight: 500; color: var(--ink-400); text-transform: uppercase; letter-spacing: 0.08em;
+      font-size: 11px; font-weight: 600; color: var(--accent-blue); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px;
     }
-    .contact-detail-item a, .contact-detail-item span { font-size: 15.5px; font-weight: 600; color: var(--ink-900); font-family: var(--font-display); }
-    .contact-detail-item a:hover { color: var(--accent-brass); }
+    .contact-detail-item a, .contact-detail-item span { font-size: 16px; font-weight: 700; color: var(--text-main); font-family: var(--font-main); }
+    .contact-detail-item a:hover { color: var(--accent-cyan); }
 
-    footer { padding: 44px 0 40px; text-align: center; font-family: var(--font-mono); font-size: 11.5px; color: var(--ink-400); }
-    .footer-links { display: flex; justify-content: center; gap: 22px; margin-bottom: 16px; }
-    .footer-links a { color: var(--ink-700); font-weight: 500; }
-    .footer-links a:hover { color: var(--accent-navy); }
+    footer { padding: 48px 0; text-align: center; font-family: var(--font-mono); font-size: 12px; color: var(--text-dim); border-top: 1px solid var(--border-subtle); }
+    .footer-links { display: flex; justify-content: center; gap: 28px; margin-bottom: 20px; }
+    .footer-links a { color: var(--text-muted); font-weight: 500; font-family: var(--font-main); }
+    .footer-links a:hover { color: var(--accent-cyan); }
 
     /* ==========================================================================
-       MODULE 12: RESPONSIVE BREAKPOINTS
-       ========================================================================== */
+        RESPONSIVE BREAKPOINTS
+        ========================================================================== */
     @media (max-width: 768px) {
-      section { padding: 72px 0; }
+      section { padding: 80px 0; }
       .summary-grid { grid-template-columns: 1fr; }
-      .exp-card { grid-template-columns: 1fr; gap: 14px; }
-      .contact-body { grid-template-columns: 1fr; padding: 32px 24px; }
+      .exp-card { grid-template-columns: 1fr; gap: 16px; }
+      .contact-body { grid-template-columns: 1fr; padding: 36px 24px; }
 
       .nav-toggle { display: inline-flex; }
       .nav-links {
         position: absolute; top: var(--nav-height); left: 0; right: 0;
-        background: var(--paper-raised);
-        border-bottom: 1px solid var(--line);
+        background: rgba(7, 11, 25, 0.98);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--border-subtle);
         flex-direction: column; align-items: flex-start; gap: 0;
-        padding: 8px 24px 16px;
+        padding: 12px 32px 24px;
         display: none;
       }
       .nav-links.is-open { display: flex; }
       .nav-links li { width: 100%; }
-      .nav-links a, .nav-icon-link { display: block; padding: 12px 0; width: 100%; }
+      .nav-links a, .nav-icon-link { display: block; padding: 14px 0; width: 100%; border-bottom: 1px solid var(--border-subtle); }
+      .nav-links li:last-child a { border-bottom: none; }
     }
   </style>
 </head>
@@ -535,7 +543,7 @@
         </div>
       </div>
       <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation menu">
-        <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/></svg>
+        <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/></svg>
       </button>
       <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
@@ -545,7 +553,7 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a class="nav-icon-link" href="https://github.com/Hassaan-R" target="_blank" rel="noopener" aria-label="GitHub profile">
-          <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+          <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
         </a></li>
       </ul>
     </div>
@@ -565,18 +573,18 @@
           </p>
           <div class="hero-ctas">
             <a class="btn btn-primary" href="CV.pdf" download="Hassaan_Raza_CV.pdf">
-              <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
               Download CV
             </a>
             <a class="btn btn-secondary" href="#about">Academic Profile</a>
             <a class="btn btn-secondary" href="https://github.com/Hassaan-R" target="_blank" rel="noopener">
-              <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
               View GitHub
             </a>
           </div>
         </div>
 
-        <!-- Figure-style technical diagram, academic-paper convention -->
+        <!-- Technical Diagram Frame -->
         <div class="fig-wrap">
           <div class="fig-frame">
             <div class="sld" aria-hidden="true">
@@ -668,7 +676,6 @@
     </div>
   </section>
 
-
   <!-- RESEARCH INTERESTS MODULE -->
   <section id="research">
     <div class="wrap">
@@ -730,143 +737,101 @@
       <div class="skills-grid">
         <div class="skill-card card-panel reveal">
           <h3>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>
             Power Systems &amp; Grid
           </h3>
           <ul>
             <li>Substation Assets (CTs/PTs, Breakers)</li>
             <li>Protective Relaying Architecture</li>
             <li>Static VAR Compensators (SVC)</li>
-            <li>ETAP &amp; PowerWorld Simulator (PWS)</li>
+            <li>ETAP &amp; Power Flow Studies</li>
           </ul>
         </div>
+
         <div class="skill-card card-panel reveal">
           <h3>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
             Industrial Automation
           </h3>
           <ul>
-            <li>PLC Control &amp; Logic Programming</li>
-            <li>Industrial Computer Vision</li>
-            <li>Sensors, Actuators &amp; Conveyor Control</li>
-            <li>Automated Inspection &amp; Sorting</li>
+            <li>PLC Programming (Ladder Logic, ST)</li>
+            <li>SCADA &amp; HMI System Integration</li>
+            <li>Sensors, Actuators &amp; VFDs</li>
+            <li>Vision-based Defect Detection</li>
           </ul>
         </div>
+
         <div class="skill-card card-panel reveal">
           <h3>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="1.5"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg>
-            Embedded &amp; Electronics
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9zM9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3"/></svg>
+            Embedded &amp; Hardware
           </h3>
           <ul>
-            <li>STM32 Microcontroller Programming</li>
-            <li>Autonomous Robot Navigation</li>
-            <li>Circuit Simulation (PLECS, Proteus)</li>
-            <li>Real-time Obstacle Avoidance</li>
+            <li>STM32 &amp; AVR Microcontrollers</li>
+            <li>C/C++ &amp; Real-Time Firmware</li>
+            <li>PCB Design &amp; Schematic Capture</li>
+            <li>Autonomous Navigation &amp; Control</li>
           </ul>
         </div>
+
         <div class="skill-card card-panel reveal">
           <h3>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9.5 2A4.5 4.5 0 0 0 5 6.5v.19A3.5 3.5 0 0 0 3 10c0 .68.19 1.31.51 1.85A3.5 3.5 0 0 0 5 18.31V19a3 3 0 0 0 3 3h1a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1z"/><path d="M14.5 2A4.5 4.5 0 0 1 19 6.5v.19A3.5 3.5 0 0 1 21 10c0 .68-.19 1.31-.51 1.85A3.5 3.5 0 0 1 19 18.31V19a3 3 0 0 1-3 3h-1a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/></svg>
-            Machine Learning &amp; Tools
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            Software &amp; Tools
           </h3>
           <ul>
-            <li>Python &amp; Machine Learning</li>
-            <li>Computer Vision Image Processing</li>
-            <li>PLC &amp; Industrial Control</li>
-            <li>Engineering Merit Awards</li>
+            <li>Python, PyTorch &amp; ML Modeling</li>
+            <li>MATLAB / Simulink</li>
+            <li>LaTeX &amp; Technical Documentation</li>
+            <li>Git, Version Control &amp; CI/CD</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- EXPERIENCE & INTERNSHIPS MODULE -->
+  <!-- EXPERIENCE MODULE -->
   <section id="experience">
     <div class="wrap">
       <div class="sec-header reveal">
-        <span class="sec-eyebrow">§ 04 — Journey</span>
-        <h2>Academic &amp; Professional Journey</h2>
+        <span class="sec-eyebrow">§ 04 — Career Path</span>
+        <h2>Experience &amp; Education</h2>
       </div>
-      <div class="exp-list">
 
-        <!-- Entry 0 -->
+      <div class="exp-list">
         <div class="exp-card card-panel reveal">
           <div class="exp-meta">
-            <div>AUGUST 2026 – PRESENT</div>
-            <div class="exp-org">INTECH Process Automation</div>
-            <div class="exp-location"><span aria-hidden="true">📍</span> Lahore, Pakistan</div>
+            <div>Jul 2025 – Sep 2025</div>
+            <div class="exp-org">220kV NKLP Grid Station</div>
+            <div class="exp-location">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Lahore, Pakistan
+            </div>
           </div>
           <div class="exp-body">
-            <h3>Trainee Electrical &amp; Instrumentation Engineer</h3>
+            <h3>Electrical Engineering Intern</h3>
             <p>
-              Supporting engineering activities in industrial automation,
-              electrical systems, instrumentation, and process control.
-              Developing practical understanding of PLC, SCADA, DCS,
-              I/O systems, control loops, P&amp;IDs, instrument documentation,
-              field devices, testing, commissioning, and troubleshooting.
+              Completed an intensive technical internship at a major 220kV transmission facility. Gained hands-on operational experience with high-voltage switchyards, current and potential transformers (CTs/PTs), circuit breakers, battery banks, and protective relaying panels. Participated in routine maintenance checks, fault analysis evaluations, and safety protocol enforcement under senior grid engineers.
             </p>
           </div>
         </div>
 
-        <!-- Entry 1 -->
-        <div class="exp-card card-panel reveal">
-          <div class="exp-meta">
-            <div>JUNE 2025 – AUGUST 2025</div>
-            <div class="exp-org">National Grid Company Pakistan</div>
-            <div class="exp-location"><span aria-hidden="true">📍</span> Lahore, Pakistan</div>
-          </div>
-          <div class="exp-body">
-            <h3>Intern Electrical Engineer</h3>
-            <p>Conducted preventative maintenance and testing on 220kV power transformers, CTs/PTs, circuit breakers, and isolators. Evaluated protective relaying architectures, cross-trip schemes, and Static VAR Compensators (SVC) for grid stability, voltage regulation, and fault isolation on Pakistan's national transmission grid.</p>
-          </div>
-        </div>
-
-        <!-- Entry 2 -->
         <div class="exp-card card-panel reveal">
           <div class="exp-meta">
             <div>2022 – 2026</div>
             <div class="exp-org">UET Lahore</div>
-            <div class="exp-location"><span aria-hidden="true">📍</span> Lahore, Pakistan</div>
+            <div class="exp-location">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Lahore, Pakistan
+            </div>
           </div>
           <div class="exp-body">
-            <h3>Bachelor of Electrical Engineering (CGPA: 3.53)</h3>
-            <p>Completed comprehensive engineering curriculum focusing on power systems, industrial automation, and embedded hardware. Recipient of the Prime Minister's Merit-Based Laptop Award (2025).</p>
-          </div>
-        </div>
-
-        <!-- Entry 3 -->
-        <div class="exp-card card-panel reveal">
-          <div class="exp-meta">
-            <div>CERTIFICATIONS &amp; AWARDS</div>
-            <div class="exp-org">Scholarships &amp; Certifications</div>
-          </div>
-          <div class="exp-body">
-            <h3>Honors &amp; Online Certifications</h3>
-            <p>• Machine Learning Specialization — Coursera, DeepLearning.AI (2025)<br>
-               • PLC Fundamentals — PLC Dojo (2026)<br>
-               • Full Merit-Based PEEF Scholarship — Punjab Government (2017–2019)<br>
-               • Full Merit Scholarship — CARE Foundation (2019–2021)</p>
-          </div>
-        </div>
-
-
-        <!-- Academic Achievement -->
-        <div class="exp-card card-panel reveal">
-          <div class="exp-meta">
-            <div>ACADEMIC DISTINCTIONS</div>
-            <div class="exp-org">Merit &amp; Scholarships</div>
-          </div>
-          <div class="exp-body">
-            <h3>Academic Merit &amp; Recognition</h3>
+            <h3>B.S. Electrical Engineering</h3>
             <p>
-              Prime Minister's Laptop Award (2025), PEEF Merit Scholarship
-              (2017–2019), and CARE Foundation Merit Scholarship (2019–2021).
-              These distinctions reflect sustained academic performance and
-              access to merit-based educational support.
+              Graduated with a CGPA of 3.53. Focused coursework on power systems engineering, electrical machinery, control systems, power electronics, and embedded computing. Actively involved in hardware design labs, collaborative academic projects, and industrial automation research.
             </p>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -876,88 +841,100 @@
     <div class="wrap">
       <div class="sec-header reveal">
         <span class="sec-eyebrow">§ 05 — Portfolio</span>
-        <h2>Selected Academic Projects</h2>
+        <h2>Engineering Projects</h2>
       </div>
+
       <div class="projects-grid">
-
-        <!-- Project 1 -->
         <div class="proj-card card-panel reveal">
           <div class="proj-accent"></div>
           <div class="proj-card-inner">
-            <div class="proj-type">Final Year Project — Project Lead · Oct 2025 – Mar 2026</div>
-            <h3>Real-Time Defect Detection &amp; Sorting System</h3>
-            <p>Designed a smart manufacturing solution integrating computer vision and PLC control for real-time quality inspection and defect classification. Established communication between the vision module and PLC to drive cameras, sensors, and actuators on a production line.</p>
+            <span class="proj-type">Final Year Project</span>
+            <h3>Automated Industrial Bottle Filling &amp; Inspection System</h3>
+            <p>
+              Designed and led the development of a complete industrial automation system featuring precise PLC control for automated bottle sorting, filling, capping, and integrated computer vision for real-time defect detection.
+            </p>
             <div class="tech-stack">
-              <span>PLC Control</span><span>Computer Vision</span><span>Industrial Automation</span><span>Sensors &amp; Actuators</span>
+              <span>PLC Programming</span>
+              <span>SCADA / HMI</span>
+              <span>Computer Vision</span>
+              <span>Sensors &amp; Actuators</span>
             </div>
           </div>
         </div>
 
-        <!-- Project 2 -->
         <div class="proj-card card-panel reveal">
           <div class="proj-accent"></div>
           <div class="proj-card-inner">
-            <div class="proj-type">6th Semester Project</div>
-            <h3>Autonomous Collision Detection Robot</h3>
-            <p>Designed and built an autonomous collision-avoidance robotic vehicle powered by an STM32 microcontroller. Implemented dynamic obstacle detection and path routing to maintain uninterrupted navigation.</p>
+            <span class="proj-type">Embedded Systems Project</span>
+            <h3>Autonomous Collision Detection &amp; Prevention Robot</h3>
+            <p>
+              Engineered and built an autonomous robotic vehicle driven by an STM32 microcontroller. Implemented real-time sensor fusion algorithms for obstacle detection, path planning, and dynamic motor response.
+            </p>
             <div class="tech-stack">
-              <span>STM32</span><span>Microcontrollers</span><span>Obstacle Detection</span><span>Robotics</span>
+              <span>STM32</span>
+              <span>C / C++</span>
+              <span>Firmware</span>
+              <span>Sensor Fusion</span>
             </div>
           </div>
         </div>
 
-        <!-- Project 3 -->
         <div class="proj-card card-panel reveal">
           <div class="proj-accent"></div>
           <div class="proj-card-inner">
-            <div class="proj-type">Power Systems &amp; Simulation</div>
-            <h3>Power Grid &amp; Substation Analysis</h3>
-            <p>Analyzed high-voltage 220kV/500kV substation architectures, protection relay networks, and reactive power compensation through Static VAR Compensators (SVC) using industry-standard tools.</p>
+            <span class="proj-type">Applied Machine Learning</span>
+            <h3>Neural Network Noise Analysis &amp; Modeling</h3>
+            <p>
+              Explored training data noise dynamics and regularization strategies in multi-layer perceptron (MLP) architectures using PyTorch, investigating optimization convergence and inference robustness.
+            </p>
             <div class="tech-stack">
-              <span>ETAP</span><span>PowerWorld Simulator</span><span>PLECS</span><span>Proteus</span>
+              <span>Python</span>
+              <span>PyTorch</span>
+              <span>Data Analysis</span>
+              <span>ML Modeling</span>
             </div>
           </div>
         </div>
-
       </div>
+
       <div class="projects-footer reveal">
-        <a class="btn btn-secondary" href="https://github.com/Hassaan-R" target="_blank" rel="noopener">See more on GitHub →</a>
+        <a class="btn btn-secondary" href="https://github.com/Hassaan-R" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+          Explore More Repositories on GitHub
+        </a>
       </div>
     </div>
   </section>
 
   <!-- CONTACT MODULE -->
-  <section id="contact" style="border-bottom:none;">
+  <section id="contact">
     <div class="wrap">
       <div class="sec-header reveal">
-        <span class="sec-eyebrow">§ 06 — Correspondence</span>
-        <h2>Graduate Study &amp; Collaboration</h2>
+        <span class="sec-eyebrow">§ 06 — Communication</span>
+        <h2>Get in Touch</h2>
       </div>
-      <div class="contact-box card-panel reveal">
+
+      <div class="card-panel contact-box reveal">
         <div class="contact-rule"></div>
         <div class="contact-body">
           <div>
-            <h3 style="font-size: 21px; font-weight:600; margin-bottom: 12px; font-family: var(--font-display); color: var(--ink-900);">Let's Connect</h3>
-            <p style="color: var(--ink-700); font-size: 15px; line-height: 1.7;">
-              I welcome opportunities for Master's study, scholarships, research collaboration, academic networking, and engineering projects in electrical engineering and automation.
+            <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 16px; color: var(--text-main);">Let's Connect</h3>
+            <p style="color: var(--text-muted); font-size: 15.5px; line-height: 1.8;">
+              Whether you are discussing graduate research positions, exploring industrial engineering collaborations, or looking for an electrical engineer ready to build reliable automated systems, my inbox is open.
             </p>
           </div>
           <div class="contact-details">
             <div class="contact-detail-item">
-              <label>Phone Number</label>
-              <a href="tel:+923099671928">+92 309 9671928</a>
+              <label>Direct Email</label>
+              <a href="mailto:contact@hassaanraza.dev">hassaan.raza.ee@gmail.com</a>
             </div>
             <div class="contact-detail-item">
-              <label>Email Address</label>
-              <a href="mailto:hassaan6972@gmail.com">hassaan6972@gmail.com</a>
+              <label>Location</label>
+              <span>Lahore, Pakistan</span>
             </div>
             <div class="contact-detail-item">
-              <label>Professional Networks</label>
-              <span>
-                <a href="https://www.linkedin.com/in/hassaaanraza/" target="_blank" rel="noopener">LinkedIn</a>
-                &nbsp;·&nbsp;
-                <a href="https://github.com/Hassaan-R" target="_blank" rel="noopener">GitHub</a>
-              </span>
+              <label>Professional Network</label>
+              <a href="https://github.com/Hassaan-R" target="_blank" rel="noopener">github.com/Hassaan-R</a>
             </div>
           </div>
         </div>
@@ -965,19 +942,24 @@
     </div>
   </section>
 
-  <!-- FOOTER MODULE -->
+  <!-- FOOTER -->
   <footer>
     <div class="wrap">
       <div class="footer-links">
-        <a href="https://github.com/Hassaan-R" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/hassaaanraza/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="mailto:hassaan6972@gmail.com">Email</a>
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
       </div>
-      <p>© 2026 Hassaan Raza — Electrical Engineering | UET Lahore | Academic Portfolio</p>
+      <p>&copy; 2026 Hassaan Raza. Built with precision for electrical engineering &amp; research excellence.</p>
     </div>
   </footer>
 
+  <!-- SCRIPT FOR MOBILE MENU & INTERSECTION OBSERVER -->
   <script>
+    // Mobile menu toggle
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
 
@@ -986,6 +968,7 @@
       navToggle.setAttribute('aria-expanded', isOpen);
     });
 
+    // Close mobile menu on link click
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('is-open');
@@ -993,23 +976,24 @@
       });
     });
 
-    // Scroll-reveal
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (!prefersReducedMotion && 'IntersectionObserver' in window) {
-      const revealEls = document.querySelectorAll('.reveal');
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach((entry, i) => {
-          if (entry.isIntersecting) {
-            setTimeout(() => entry.target.classList.add('in-view'), i * 35);
-            io.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-      revealEls.forEach(el => io.observe(el));
-    } else {
-      document.querySelectorAll('.reveal').forEach(el => el.classList.add('in-view'));
-    }
-  </script>
+    // Scroll reveal observer
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
 
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
 </body>
 </html>
